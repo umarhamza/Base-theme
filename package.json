@@ -1,5 +1,5 @@
 {
-  "name": "gulp-bourbon",
+  "name": "ferado clothing",
   "version": "1.0.0",
   "description": "gulp, bourbon and neat",
   "main": "index.php",
@@ -17,6 +17,7 @@
   "license": "ISC",
   "devDependencies": {
     "gulp": "^3.9.0",
+    "gulp-livereload": "^3.8.1",
     "gulp-sass": "^2.0.4"
   }
 }
