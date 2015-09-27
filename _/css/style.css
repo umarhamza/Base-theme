@@ -1,0 +1,11 @@
+body {
+  background-color: red; }
+
+div {
+  background-color: blue;
+  background-position: top; }
+  div h1 {
+    color: black; }
+
+p {
+  color: yellow; }

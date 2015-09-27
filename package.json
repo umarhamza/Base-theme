@@ -1,0 +1,22 @@
+{
+  "name": "gulp-bourbon",
+  "version": "1.0.0",
+  "description": "gulp, bourbon and neat",
+  "main": "index.php",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/project-collab"
+  },
+  "keywords": [
+    "gulp",
+    "sass",
+    "bourbon",
+    "neat"
+  ],
+  "author": "Umar",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.0.4"
+  }
+}
