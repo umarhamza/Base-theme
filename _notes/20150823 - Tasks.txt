@@ -1,0 +1,65 @@
+FASHION WEBSITE --------------- --------------- 
+PROJECT MANAGMENT 
+- Use Trello 
+
+COMPONENTS ----------- 
+
+1) Mega Menu
+2) Search field
+3) Counter
+4) Hover animations
+5) Carousel 
+6) Posts 
+- PHP  
+- jQuery 
+7) Mailchimp 
+8) Rotating testimonials 
+9) Loading script 
+11) Contact Forms
+
+TECHNOLOGIES
+HTML5
+CSS3 
+jQuery
+A) Paralax
+B) Google maps API 
+C) Lightbox
+D) Scroll events
+Grunt
+Sass
+Compass
+Susy
+Font awesome
+Google fonts
+Ajax
+Css animations
+Browser compatibility 
+GIT 
+WAMP/MAMP 
+
+PAGES ------
+1) Home [A]
+2) About
+3) FAQs
+5) Gallery?
+6) Shop
+	a) product list 
+	b) product details
+	c) product grid 
+	d) shopping cart
+	e) add to cart widget
+	f) checkout
+) Contact
+) Blog
+	a) blog list v1 
+	b) masonary v3
+	c) blog details
+	d) comments
+) 404 page 
+
+CHECK OUT------
+[A] http://demo.woorockets.com/themes/ferado/wordpress/
+PHP Storm - Send tutorial
+http://dimitricon.co.uk/
+http://londonpetroschool.umarhamza.com/
+https://www.gitignore.io/

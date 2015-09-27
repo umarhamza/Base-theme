@@ -1,1 +1,47 @@
-@import : "normalize"
+@import normalize
+
+// variables
+$light_gray 	: 	#a3a3a3
+$mid_gray 		: 	#353533
+$dark_gray 		: 	#2e2e2c
+$red 					: 	#f45245
+$mid_red 			: 	#dc4a3e
+*
+	box-sizing: border-box
+	height: inherit
+	font-family: lato, sans-serif
+
+section
+	width: 100%
+
+.container
+	max-width: 1175px
+	height: inherit
+	margin: 0 auto
+
+	&:after
+		clear: both
+		content: ""
+		display: block
+
+#topbar
+	background: $mid_gray
+	height: 50px
+
+	.topbar-right
+		float: right
+
+	.topbar-left
+		float: left
+
+	button
+		color: $light_gray
+		background: $dark_gray 
+		font-size: 13px
+		padding: 15px
+		margin-left: 2px;
+		float: left
+
+		&:hover
+			background: $red
+			color: white

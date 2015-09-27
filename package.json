@@ -13,7 +13,7 @@
     "bourbon",
     "neat"
   ],
-  "author": "Umar",
+  "author": "Umar & Tariq",
   "license": "ISC",
   "devDependencies": {
     "gulp": "^3.9.0",
