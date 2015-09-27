@@ -10,10 +10,10 @@
 <body>
 	<section id="topbar">
 		<div class="container">
-			<div class="topbar-left">
+			<div class="welcome">
 				<a href="#"><button>Welcome Tariq!</button></a>
 			</div>
-			<div class="topbar-right">
+			<div class="shop-btns">
 				<button class="lang">Language <i class="fa fa-angle-down"></i></button>
 				<button class="my-wishlist">My Wishlist</button>
 				<button class="my-account">My Account</button>
@@ -24,17 +24,27 @@
 
 	<header id="header">
 		<div class="container">
-			<h1 class="logo">Ferado</h1>
+			<div class="branding">
+				<h1 class="logo">Ferado</h1>			
+			</div>
 			<nav id="navbar">
-				<div class="navigation">
-					<a href="">Home</a>
-					<a href="">About</a>
-					<a href="">Shop</a>
-					<a href="">Gallery</a>
-					<a href="">FAQ's</a>
-					<a href="">Contact</a>
-					<input type="button" class="search-btn">
-					<input type="text" class="search-field">
+				<div class="nav-wrap">
+					<ul class="navigation">
+						<li><a href="">Home</a></li>
+						<li><a href="">About</a></li>
+						<li><a href="">Shop</a></li>
+						<li><a href="">Gallery</a></li>
+						<li><a href="">FAQ's</a></li>
+						<li><a href="">Contact</a></li>
+					</ul>
+					
+					<form class="navbar-form" role="search">
+            <div class="form-group">
+              <input type="text" class="search-field" placeholder="Search">
+            </div>
+           	<button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
+          </form>	
+
 					<span class="cart-btn"></span>
 					<div class="cart-box">
 						View Cart

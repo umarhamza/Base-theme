@@ -1,3 +1,4 @@
+// imports
 @import normalize
 
 // variables
@@ -5,12 +6,50 @@ $light_gray 	: 	#a3a3a3
 $mid_gray 		: 	#353533
 $dark_gray 		: 	#2e2e2c
 $red 					: 	#f45245
-$mid_red 			: 	#dc4a3e
-*
-	box-sizing: border-box
-	height: inherit
-	font-family: lato, sans-serif
+$mid_red 			: 	#E65043
+$dark_red 		: 	#af2d23
 
+// mixins 
+@mixin links ($link, $visit, $hover, $active)  
+  a  
+    color: $link  	
+    &:visited  
+      color: $visit  	
+      
+    &:hover  
+      color: $hover  	   
+      
+    &:active  
+      color: $active  	
+      
+    
+
+
+//extended/helper classes
+.clearfix 
+  &:after 
+    content: "" 
+    display: table 
+    clear: both 
+
+.float-right
+	float: right
+
+.float-left
+	float: left
+
+.transition
+	transition: all 0.3s ease-in-out
+
+// global
+
+*
+	font-family: lato, sans-serif
+	height: inherit
+	box-sizing: border-box
+	position: reletive
+
+// page styles
 section
 	width: 100%
 
@@ -18,30 +57,96 @@ section
 	max-width: 1175px
 	height: inherit
 	margin: 0 auto
-
-	&:after
-		clear: both
-		content: ""
-		display: block
+	@extend .clearfix
 
 #topbar
 	background: $mid_gray
 	height: 50px
 
-	.topbar-right
-		float: right
+	.welcome
+		@extend .float-left
 
-	.topbar-left
-		float: left
+		button
+			margin: 0
+
+		a
+			display: block
+
+	.shop-btns
+		@extend .float-right
 
 	button
 		color: $light_gray
 		background: $dark_gray 
 		font-size: 13px
 		padding: 15px
-		margin-left: 2px;
+		margin-left: 2px 
 		float: left
 
 		&:hover
 			background: $red
 			color: white
+
+#header
+	background: $red
+	height: 150px
+
+	.container
+		height: inherit
+	
+	.branding
+		width: 170px
+		@extend .float-left
+
+		.logo
+			text-indent: -1000px
+			background: 
+				image: url("../images/logo.svg")
+				repeat: no-repeat
+				position: center
+				size: contain
+			margin: 0
+
+#navbar
+	width: 100%
+	max-width: 950px
+	@extend .float-right
+
+
+	.nav-wrap
+		float: right
+		@extend .clearfix
+
+	.navigation
+		margin: 0
+		padding: 0
+		float: left
+
+		li
+			display: inline-block
+			@extend .transition
+			@include links($dark_red, $dark_red, white, white)
+
+			&:first-child
+				background: $mid_red
+
+			&:hover
+				background: $mid_red
+
+		a
+			font-size: 16px
+			text-transform: uppercase
+			text-decoration: none
+			padding: 30px
+			vertical-align: middle
+			display: table-cell
+
+	form
+		height: 55px
+		float: left
+
+		.search-field
+			position: absolute
+			bottom: 0
+			width: 100%
+			max-width: 500px

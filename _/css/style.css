@@ -376,10 +376,25 @@ td,
 th {
   padding: 0; }
 
+.clearfix:after, .container:after, #navbar .nav-wrap:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.float-right, #topbar .shop-btns, #navbar {
+  float: right; }
+
+.float-left, #topbar .welcome, #header .branding {
+  float: left; }
+
+.transition, #navbar .navigation li {
+  transition: all 0.3s ease-in-out; }
+
 * {
-  box-sizing: border-box;
+  font-family: lato, sans-serif;
   height: inherit;
-  font-family: lato, sans-serif; }
+  box-sizing: border-box;
+  position: reletive; }
 
 section {
   width: 100%; }
@@ -388,18 +403,14 @@ section {
   max-width: 1175px;
   height: inherit;
   margin: 0 auto; }
-  .container:after {
-    clear: both;
-    content: "";
-    display: block; }
 
 #topbar {
   background: #353533;
   height: 50px; }
-  #topbar .topbar-right {
-    float: right; }
-  #topbar .topbar-left {
-    float: left; }
+  #topbar .welcome button {
+    margin: 0; }
+  #topbar .welcome a {
+    display: block; }
   #topbar button {
     color: #a3a3a3;
     background: #2e2e2c;
@@ -410,3 +421,57 @@ section {
     #topbar button:hover {
       background: #f45245;
       color: white; }
+
+#header {
+  background: #f45245;
+  height: 150px; }
+  #header .container {
+    height: inherit; }
+  #header .branding {
+    width: 170px; }
+    #header .branding .logo {
+      text-indent: -1000px;
+      background-image: url("../images/logo.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      margin: 0; }
+
+#navbar {
+  width: 100%;
+  max-width: 950px; }
+  #navbar .nav-wrap {
+    float: right; }
+  #navbar .navigation {
+    margin: 0;
+    padding: 0;
+    float: left; }
+    #navbar .navigation li {
+      display: inline-block; }
+      #navbar .navigation li a {
+        color: #af2d23; }
+        #navbar .navigation li a:visited {
+          color: #af2d23; }
+        #navbar .navigation li a:hover {
+          color: white; }
+        #navbar .navigation li a:active {
+          color: white; }
+      #navbar .navigation li:first-child {
+        background: #E65043; }
+      #navbar .navigation li:hover {
+        background: #E65043; }
+    #navbar .navigation a {
+      font-size: 16px;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 30px;
+      vertical-align: middle;
+      display: table-cell; }
+  #navbar form {
+    height: 55px;
+    float: left; }
+    #navbar form .search-field {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      max-width: 500px; }
