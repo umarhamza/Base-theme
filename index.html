@@ -9,7 +9,7 @@
 </head>
 <body>
 	<section id="topbar">
-		<div class="container" >
+		<div class="container">
 			<div class="welcome">
 				<a href="#"><button>Welcome Tariq!</button></a>
 			</div>
@@ -30,28 +30,45 @@
 			<nav id="navbar">
 				<div class="nav-wrap">
 					<ul class="navigation">
-						<li><a href="">Home</a></li>
+						<li><a class="home" href="">Home</a></li>
 						<li><a href="">About</a></li>
 						<li><a href="">Shop</a></li>
 						<li><a href="">Gallery</a></li>
 						<li><a href="">FAQ's</a></li>
 						<li><a href="">Contact</a></li>
-					</ul>
-					
-					<form class="navbar-form" role="search">
-            <div class="form-group">
-              <input type="text" class="search-field" placeholder="Search">
-            </div>
-           	<button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
-          </form>	
-
-					<span class="cart-btn"></span>
-					<div class="cart-box">
-						View Cart
-					</div>
-				</div>
-			</nav>
-		</div>
+					</ul> <!-- navigation -->
+				
+					<ul class="header-btns">
+						<li>
+							<div class="search-btn">
+								<i class="fa fa-search"></i>
+							</div>
+						</li>
+						<li class="cart-btn-wrap">
+							<div class="cart-btn">
+								<i class="fa fa-shopping-cart"></i>
+							</div>
+							<ul class="cart-wrap">
+								<li>
+									<div class="cart"></div>
+								</li>
+							</ul> <!-- cart-wrap -->
+						</li> <!-- cart-btn-wrap -->
+					</ul> <!-- header buttons -->
+				</div><!-- navwrap -->
+           	</nav>
+		</div> <!-- container -->
+		<div id="header-search-bar" class="search-box-wrapper clear hide" style="display: block;">
+			<div class="container">
+				<form role="search" method="get" class="search-form" action="">
+					<label>
+						<span class="screen-reader-text">Search for:</span>
+						<input type="search" class="search-field" placeholder="Search …" value="" name="search" title="Search for:">
+					</label>
+					<input type="submit" class="search-submit" value="Search">
+				</form>			
+			</div>
+		<!-- </div> header search bar -->
 	</header>
 
 	<div>

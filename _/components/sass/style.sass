@@ -3,13 +3,16 @@
 @import 'bourbon/bourbon'
 @import 'neat/neat'
 
-// variables
+// color variables
 $light_gray 	: 	#a3a3a3
 $mid_gray 		: 	#353533
 $dark_gray 		: 	#2e2e2c
-$red 					: 	#f45245
-$mid_red 			: 	#E65043
+$red 			: 	#f45245
+$mid_red 		: 	#E65043
 $dark_red 		: 	#af2d23
+
+// size variable
+$thin_bar 		: 	50px
 
 // mixins 
 @mixin links ($link, $visit, $hover, $active)  
@@ -23,8 +26,6 @@ $dark_red 		: 	#af2d23
       
     &:active  
       color: $active  	
-      
-    
 
 
 //extended/helper classes
@@ -63,7 +64,7 @@ section
 
 #topbar
 	background: $mid_gray
-	height: 50px
+	height: $thin_bar
 
 	.welcome
 		@extend .float-left
@@ -110,43 +111,50 @@ section
 		
 #navbar
 	@include span-columns(10)
-	border: 1px solid blue
 
 	@include direction-context(right-to-left)  
 		.nav-wrap
-			@include span-columns(11)
-			border: 1px solid green
+			@include span-columns(10)
 
-	.navigation
+	ul
 		margin: 0
 		padding: 0
 		float: left
 
-		li
-			display: inline-block
-			@extend .transition
-			@include links($dark_red, $dark_red, white, white)
+	li
+		display: inline-block
+		@extend .transition
+		@include links($dark_red, $dark_red, white, white)
 
-			&:first-child
-				background: $mid_red
+		.home
+			background: $mid_red
 
-			&:hover
-				background: $mid_red
+		&:hover
+			background: $mid_red
 
-		a
-			font-size: 16px
-			text-transform: uppercase
-			text-decoration: none
-			padding: 30px
-			vertical-align: middle
-			display: table-cell
+	a
+		font-size: 16px
+		text-transform: uppercase
+		text-decoration: none
+		padding: 30px
+		vertical-align: middle
+		display: table-cell
 
-	form
-		height: 55px
-		float: left
+#header-search-bar
+	height: 85px
+	padding: 10px 0
+	background: $dark_gray
 
-		.search-field
-			position: absolute
-			bottom: 0
-			width: 100%
-			max-width: 500px
+	@include direction-context(right-to-left)  
+		form
+			@include span-columns(5)
+
+			label
+				text-indent: -1000px
+				color: $dark_gray
+				height: auto
+
+			.search-field
+				width: 100%
+				max-width: 260px
+				padding: 1rem 2rem 1rem 4rem
