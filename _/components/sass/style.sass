@@ -1,5 +1,7 @@
 // imports
-@import normalize
+@import 'normalize'
+@import 'bourbon/bourbon'
+@import 'neat/neat'
 
 // variables
 $light_gray 	: 	#a3a3a3
@@ -54,7 +56,7 @@ section
 	width: 100%
 
 .container
-	max-width: 1175px
+	@include outer-container
 	height: inherit
 	margin: 0 auto
 	@extend .clearfix
@@ -95,8 +97,7 @@ section
 		height: inherit
 	
 	.branding
-		width: 170px
-		@extend .float-left
+		@include span-columns(2)
 
 		.logo
 			text-indent: -1000px
@@ -106,16 +107,15 @@ section
 				position: center
 				size: contain
 			margin: 0
-
+		
 #navbar
-	width: 100%
-	max-width: 950px
-	@extend .float-right
+	@include span-columns(10)
+	border: 1px solid blue
 
-
-	.nav-wrap
-		float: right
-		@extend .clearfix
+	@include direction-context(right-to-left)  
+		.nav-wrap
+			@include span-columns(11)
+			border: 1px solid green
 
 	.navigation
 		margin: 0
