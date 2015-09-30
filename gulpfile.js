@@ -14,13 +14,13 @@ gulp.task('serve', function() {
 		// add a server dir
 		server: {
 			baseDir: "./"
-		},// server
+		}// server
 
 		// add a proxy address to your server
 		//proxy: "mywebsite.dev",
 
 		// select a default browser
-		browser: ["chrome"]
+		//browser: ["chrome"]
 
 	});// browser sync init
 

@@ -4,15 +4,16 @@
 @import 'neat/neat'
 
 // color variables
-$light_gray 	: 	#a3a3a3
-$mid_gray 		: 	#353533
-$dark_gray 		: 	#2e2e2c
-$red 			: 	#f45245
-$mid_red 		: 	#E65043
-$dark_red 		: 	#af2d23
+$light_gray 			: 			#a3a3a3
+$mid_gray 				: 			#353533
+$dark_gray 				: 			#2e2e2c
+$red 					: 			#f45245
+$mid_red 				: 			#E65043
+$dark_red 				: 			#af2d23
 
 // size variable
-$thin_bar 		: 	50px
+$thin_bar 				: 			50px
+$header_height 			: 			150px
 
 // mixins 
 @mixin links ($link, $visit, $hover, $active)  
@@ -48,9 +49,12 @@ $thin_bar 		: 	50px
 
 *
 	font-family: lato, sans-serif
-	height: inherit
 	box-sizing: border-box
 	position: reletive
+
+html,
+body
+	height: 100%
 
 // page styles
 section
@@ -58,7 +62,6 @@ section
 
 .container
 	@include outer-container
-	height: inherit
 	margin: 0 auto
 	@extend .clearfix
 
@@ -66,22 +69,33 @@ section
 	background: $mid_gray
 	height: $thin_bar
 
-	.welcome
-		@extend .float-left
+	.container
+		height: inherit
 
+	@include direction-context(left-to-right)
+	.welcome
 		button
-			margin: 0
+			margin: 0 !important
 
 		a
+			color: $light_gray
+			text-decoration: none
 			display: block
 
-	.shop-btns
-		@extend .float-right
+		&:hover a
+			color: white
+	
+	@include direction-context(right-to-left)
+		.shop-btns
+			@include span-columns(4)
+			width: auto
+			height: $thin_bar
 
 	button
 		color: $light_gray
 		background: $dark_gray 
 		font-size: 13px
+		height: inherit
 		padding: 15px
 		margin-left: 2px 
 		float: left
@@ -92,13 +106,13 @@ section
 
 #header
 	background: $red
-	height: 150px
-
-	.container
-		height: inherit
+	height: $header_height
 	
 	.branding
 		@include span-columns(2)
+
+		a
+			display: block
 
 		.logo
 			text-indent: -1000px
@@ -107,16 +121,21 @@ section
 				repeat: no-repeat
 				position: center
 				size: contain
+			height: $header_height  
 			margin: 0
 		
 #navbar
 	@include span-columns(10)
+
+	*
+		height: inherit
 
 	@include direction-context(right-to-left)  
 		.nav-wrap
 			@include span-columns(10)
 
 	ul
+		height: $header_height
 		margin: 0
 		padding: 0
 		float: left
@@ -141,18 +160,21 @@ section
 		display: table-cell
 
 #header-search-bar
-	height: 85px
+	height: 80px
 	padding: 10px 0
 	background: $dark_gray
 
 	@include direction-context(right-to-left)  
 		form
-			@include span-columns(5)
+			@include span-columns(6)
 
 			label
 				text-indent: -1000px
 				color: $dark_gray
 				height: auto
+
+					span 
+						display: none
 
 			.search-field
 				width: 100%
