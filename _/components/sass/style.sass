@@ -13,6 +13,7 @@ $dark_red 		: 	#af2d23
 
 // size variable
 $thin_bar 		: 	50px
+$header_height 	: 	150px
 
 // mixins 
 @mixin links ($link, $visit, $hover, $active)  
@@ -48,7 +49,6 @@ $thin_bar 		: 	50px
 
 *
 	font-family: lato, sans-serif
-	height: inherit
 	box-sizing: border-box
 	position: reletive
 
@@ -66,18 +66,6 @@ section
 	background: $mid_gray
 	height: $thin_bar
 
-	.welcome
-		@extend .float-left
-
-		button
-			margin: 0
-
-		a
-			display: block
-
-	.shop-btns
-		@extend .float-right
-
 	button
 		color: $light_gray
 		background: $dark_gray 
@@ -85,20 +73,41 @@ section
 		padding: 15px
 		margin-left: 2px 
 		float: left
+		height: 100%
 
 		&:hover
 			background: $red
 			color: white
 
+		&:hover a 
+			color: white
+
+	@include direction-context(left-to-right)
+		.welcome
+			button
+				margin: 0
+
+			a
+				color: $light_gray
+				text-decoration: none
+				display: block
+
+	@include direction-context(right-to-left)
+		.shop-btns
+			@include span-columns(4)
+			width: auto 
+			height: 100%
+
 #header
 	background: $red
-	//height: 150px
-
 	.container
-		height: 150px
+		height: $header_height
 	
 	.branding
 		@include span-columns(2)
+
+		a 
+			display: block
 
 		.logo
 			text-indent: -1000px
@@ -108,7 +117,8 @@ section
 				position: center
 				size: contain
 			margin: 0
-		
+			height: $header_height
+
 #navbar
 	@include span-columns(10)
 
@@ -139,6 +149,7 @@ section
 		padding: 30px
 		vertical-align: middle
 		display: table-cell
+		height: $header_height
 
 #header-search-bar
 	height: 85px
