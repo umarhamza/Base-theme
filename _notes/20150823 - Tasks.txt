@@ -1,3 +1,8 @@
+USEFUL LINKS --------------- --------------- 
+
+git remote, fetch, push and pull
+https://www.atlassian.com/git/tutorials/syncing/git-fetch/
+
 FASHION WEBSITE --------------- --------------- 
 PROJECT MANAGMENT 
 - Use Trello 
