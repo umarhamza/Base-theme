@@ -34,9 +34,8 @@ $header_height 			: 			150px
     &:active  
       color: $active  	
 
-@mixin row_title($title_color, $accent_color, $accent_width)
+@mixin row_title($title_color, $background, $accent_color, $accent_width)
 	.h2-accent
-		background: null
 		position: relative
 
 		&:before,
@@ -47,7 +46,7 @@ $header_height 			: 			150px
 			content: ""
 			display: block
 			margin: auto
-			z-index: -3
+			z-index: 0
 
 		&:before
 			@include position(absolute, -2px 0 0 0) 
@@ -56,15 +55,17 @@ $header_height 			: 			150px
 			@include position(absolute, 8px 0 0 0)
 			@include calc(width, "#{$accent_width} - 40px")
 
-		.row-title
+		h2
 			font-size: 32px
 			font-weight: bold
 			font-style: normal
 			text-transform: uppercase
 			color: $title_color
-			background: white
-			width: 200px
+			text-align: center
+			background: $background
+			@include calc(width, "#{$accent_width} - 90px")
 			margin: 15px auto 50px
+			z-index: 1 
 	
 
 //extended/helper classes 
@@ -250,30 +251,28 @@ section
 
 .row
 	padding: 50px 0
+	text-align: center
+	//background: white
 
 #row1 
-	text-align: center
-
-	@include row_title($mid_gray, $lighter_gray, 300px)
+	@include row_title($mid_gray, white, $lighter_gray, 300px)
 
 	.pod-wrap
-		@include display(flex)
-		@include justify-content(center)
-		@include justify-content(space-around)
+		@include span-columns(12)
 
 		.pod 
 			background: $dark_gray
 			position: relative 
-			width: 25%
-			height: 380px
-			margin: 0 15px
+			@include span-columns(3 of 12) 
+			height: 356px
 
 			a 
 				display: block
-				position: relative
+				position: relative 
 
 			.front
 				transform: scale(0)
+				width: 100%
 
 			.back
 				@include position(absolute, 0 0 0 0)
@@ -289,6 +288,7 @@ section
 	.container
 		@include display(flex)
 		@include align-items(center)
+		@include justify-content(center)
 
 		.image 
 			border-right: 1px solid #d4d4d4
@@ -309,6 +309,43 @@ section
 				margin: 0
 
 		.name
-			 @include align-items(flex-end)
+			color: $red 
+			font-size: 14px
+			font-weight: bold
+			margin: 70px 0 0 90px
 
+#row3
+	background: $dark_gray url('../images/pattern.png') repeat center center
 
+	@include row_title($dark_red, $red, $dark_red, 300px)
+
+	.h2-wrap
+		background: $red
+		padding: 10px
+		@include margin(-50px null 20px null)
+
+		h2
+			padding: 0
+			@include margin(0 null 0 null)
+
+	.pod-wrap
+		@include span-columns(12) 
+
+		.pod
+			position: relative 
+			@include span-columns(4 of 12) 
+
+			a
+				display: block
+
+			.front 
+				width: 100%
+
+			.back
+				@include position(absolute, 0 0 0 0)
+				margin: auto
+
+#row4
+	.pod
+		position: relative 
+		@include span-columns(3 of 12) 
