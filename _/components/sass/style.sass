@@ -4,6 +4,7 @@
 @import 'neat/neat'
 
 // color variables
+$lighter_gray 			: 			#dddddd
 $light_gray 			: 			#a3a3a3
 $mid_gray 				: 			#353533
 $dark_gray 				: 			#2e2e2c
@@ -11,9 +12,15 @@ $red 					: 			#f45245
 $mid_red 				: 			#E65043
 $dark_red 				: 			#af2d23
 
+// font sizes
+$hero_h2_font			: 			70px
+$h3_font				: 			25px
+$hero_btn_font 			: 			16px
+
 // size variable
 $thin_bar 				: 			50px
 $header_height 			: 			150px
+$accent_width 			: 			300px
 
 // mixins 
 @mixin links ($link, $visit, $hover, $active)  
@@ -28,6 +35,39 @@ $header_height 			: 			150px
     &:active  
       color: $active  	
 
+@mixin row_title($font-family)
+	.h2-accent
+		background: null
+		position: relative
+
+		&:before,
+		&:after
+			background: $lighter_gray
+			width: $accent_width
+			height: 2px
+			content: ""
+			display: block
+			margin: auto
+			z-index: -3
+
+		&:before
+			@include position(absolute, -2px 0 0 0) 
+
+		&:after
+			@include position(absolute, 8px 0 0 0)
+			@include calc(width, "#{$accent_width} - 40px")
+
+		.row-title
+			font-size: 32px
+			font-weight: bold
+			font-style: normal
+			text-transform: uppercase
+			color: $mid_gray
+			font-family: $font-family
+			background: white
+			width: 200px
+			margin: 15px auto 20px
+	
 
 //extended/helper classes 
 .clearfix 
@@ -50,7 +90,8 @@ $header_height 			: 			150px
 *
 	font-family: lato, sans-serif
 	box-sizing: border-box
-	position: reletive
+	position: relative
+	@include transition(all 0.3s ease-in-out)
 
 html,
 body
@@ -117,7 +158,7 @@ section
 			display: block
 
 		.logo
-			text-indent: -1000px
+			@include hide-text
 			background: 
 				image: url("../images/logo.svg")
 				repeat: no-repeat
@@ -177,9 +218,66 @@ section
 				color: $dark_gray
 				height: auto 
 
-
-
 			.search-field
 				width: 100%
 				max-width: 260px
 				padding: 1rem 2rem 1rem 4rem
+
+// home hero
+#splash-header
+	min-height: 100%
+	background:
+		image: url("../images/home_slider.jpg")
+		repeat: no-repeat
+		size: cover
+	@include align-items(center)
+	@include display(flex)
+
+	.container
+		@include flex(1)
+
+
+		.hero-txt-wrap
+			text-align: center
+			color: white
+			h2 
+				font-size: $hero_h2_font
+				margin: 0
+			h3
+				font-size: $h3_font
+			button
+				font-size: $hero_btn_font
+				border: 2px solid white
+				padding: 10px 20px
+
+#row1 
+	padding: 10px
+	text-align: center
+
+	@include row_title(null)
+
+	.pod-wrap
+		@include display(flex)
+		@include justify-content(center)
+		@include justify-content(space-around)
+
+		.pod 
+			background: $dark_gray
+			position: relative 
+			height: 380px
+
+			a 
+				display: block
+				position: relative
+
+			.front
+				transform: scale(0)
+
+			.back
+				@include position(absolute, 0 0 0 0)
+				margin: auto
+
+			&:hover img.front
+				transform: scale(1)
+				@include transition-delay(0.1s)
+
