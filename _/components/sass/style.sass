@@ -4,16 +4,16 @@
 @import 'neat/neat'
 
 // color variables
-$light_gray 	: 	#a3a3a3
-$mid_gray 		: 	#353533
-$dark_gray 		: 	#2e2e2c
-$red 			: 	#f45245
-$mid_red 		: 	#E65043
-$dark_red 		: 	#af2d23
+$light_gray 			: 			#a3a3a3
+$mid_gray 				: 			#353533
+$dark_gray 				: 			#2e2e2c
+$red 					: 			#f45245
+$mid_red 				: 			#E65043
+$dark_red 				: 			#af2d23
 
 // size variable
-$thin_bar 		: 	50px
-$header_height 	: 	150px
+$thin_bar 				: 			50px
+$header_height 			: 			150px
 
 // mixins 
 @mixin links ($link, $visit, $hover, $active)  
@@ -29,7 +29,7 @@ $header_height 	: 	150px
       color: $active  	
 
 
-//extended/helper classes
+//extended/helper classes 
 .clearfix 
   &:after 
     content: "" 
@@ -52,13 +52,16 @@ $header_height 	: 	150px
 	box-sizing: border-box
 	position: reletive
 
+html,
+body
+	height: 100%
+
 // page styles
 section
 	width: 100%
 
 .container
-	@include outer-container
-	height: inherit
+	@include outer-container 
 	margin: 0 auto
 	@extend .clearfix
 
@@ -66,10 +69,14 @@ section
 	background: $mid_gray
 	height: $thin_bar
 
+	.container
+		height: inherit
+
 	button
 		color: $light_gray
 		background: $dark_gray 
 		font-size: 13px
+		height: inherit
 		padding: 15px
 		margin-left: 2px 
 		float: left
@@ -104,7 +111,7 @@ section
 		height: $header_height
 	
 	.branding
-		@include span-columns(2)
+		@include span-columns(2) 
 
 		a 
 			display: block
@@ -116,17 +123,22 @@ section
 				repeat: no-repeat
 				position: center
 				size: contain
+			height: $header_height  
 			margin: 0
 			height: $header_height
 
 #navbar
 	@include span-columns(10)
 
+	*
+		height: inherit
+
 	@include direction-context(right-to-left)  
 		.nav-wrap
 			@include span-columns(10)
 
 	ul
+		height: $header_height
 		margin: 0
 		padding: 0
 		float: left
@@ -152,18 +164,20 @@ section
 		height: $header_height
 
 #header-search-bar
-	height: 85px
+	height: 80px
 	padding: 10px 0
 	background: $dark_gray
 
 	@include direction-context(right-to-left)  
 		form
-			@include span-columns(5)
+			@include span-columns(6)
 
 			label
 				text-indent: -1000px
 				color: $dark_gray
-				height: auto
+				height: auto 
+
+
 
 			.search-field
 				width: 100%
