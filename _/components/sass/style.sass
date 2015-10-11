@@ -20,7 +20,6 @@ $hero_btn_font 			: 			16px
 // size variable
 $thin_bar 				: 			50px
 $header_height 			: 			150px
-$accent_width 			: 			300px
 
 // mixins 
 @mixin links ($link, $visit, $hover, $active)  
@@ -35,14 +34,14 @@ $accent_width 			: 			300px
     &:active  
       color: $active  	
 
-@mixin row_title($font-family)
+@mixin row_title($title_color, $accent_color, $accent_width)
 	.h2-accent
 		background: null
 		position: relative
 
 		&:before,
 		&:after
-			background: $lighter_gray
+			background: $accent_color
 			width: $accent_width
 			height: 2px
 			content: ""
@@ -62,11 +61,10 @@ $accent_width 			: 			300px
 			font-weight: bold
 			font-style: normal
 			text-transform: uppercase
-			color: $mid_gray
-			font-family: $font-family
+			color: $title_color
 			background: white
 			width: 200px
-			margin: 15px auto 20px
+			margin: 15px auto 50px
 	
 
 //extended/helper classes 
@@ -250,11 +248,13 @@ section
 				border: 2px solid white
 				padding: 10px 20px
 
+.row
+	padding: 50px 0
+
 #row1 
-	padding: 10px
 	text-align: center
 
-	@include row_title(null)
+	@include row_title($mid_gray, $lighter_gray, 300px)
 
 	.pod-wrap
 		@include display(flex)
@@ -264,7 +264,9 @@ section
 		.pod 
 			background: $dark_gray
 			position: relative 
+			width: 25%
 			height: 380px
+			margin: 0 15px
 
 			a 
 				display: block
@@ -279,5 +281,34 @@ section
 
 			&:hover img.front
 				transform: scale(1)
-				@include transition-delay(0.1s)
+				@include transition-delay(0.2s)
+
+#row2
+	background: #ededed
+
+	.container
+		@include display(flex)
+		@include align-items(center)
+
+		.image 
+			border-right: 1px solid #d4d4d4
+			padding-right: 30px
+			margin-right: 30px
+			img
+				@include size(140px 140px)
+				border-radius: 50%
+
+		.text 
+			color: $dark_gray
+			font-size: 27px
+			font-weight: 100
+			font-style: italic
+			
+			p
+				padding: 0 
+				margin: 0
+
+		.name
+			 @include align-items(flex-end)
+
 
