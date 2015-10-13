@@ -92,6 +92,9 @@ $header_height 			: 			150px
 	position: relative
 	@include transition(all 0.3s ease-in-out)
 
+	&:hover
+		@include transition(all 0.3s ease-in-out)
+
 html,
 body
 	height: 100%
@@ -351,7 +354,14 @@ section
 
 	.pod
 		position: relative 
-		@include span-columns(3 of 12) 
+		@include span-columns(3 of 12) 	
+
+		@include transition(all 0.3s ease-in-out)
+		@include transition-delay(0.1s)
+
+		&:hover
+			@include transition(all 0.3s ease-in-out)
+			@include transition-delay(0.1s)
 
 		img
 			width: 100%
@@ -362,25 +372,23 @@ section
 			padding: 17px
 			display: flex
 			@include justify-content(space-between)
-			//overflow: hidden
-			transition: all 0.3s ease-in-out
-			transition-delay: 0.1s
+			overflow: hidden
+			@include transition(all 0.3s ease-in-out)
+			@include transition-delay(0.1s)
 
 			&:before
 				content: ""
 				display: block
 				background: $red
 				@include position(absolute, 0 0 0 0)
-				transform: translate(0px, -53px)
-				transition: all 0.3s ease-in-out
-				transition-delay: 0.1s
-
-
+				transform: translate(0px, -55px)
+				@include transition(all 0.3s ease-in-out)
+				@include transition-delay(0.1s)
 
 		&:hover .add-to-cart-wrap:before
 			transform: translate(0px, 0px)
-			transition: all 0.3s ease-in-out
-			transition-delay: 0.1s
+			@include transition(all 0.3s ease-in-out)
+			@include transition-delay(0.1s)
 			
 			button 
 				padding: 0
