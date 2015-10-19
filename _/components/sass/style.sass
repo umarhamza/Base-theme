@@ -342,23 +342,34 @@ section
 			overflow: hidden
 			height: 150px			
 			@include span-columns(4 of 12) 
+			@include transition(all 0.3s ease-in-out)
 
 			a
 				display: block
 			
 			&:after
-				border: 1px solid white
+				border: 0px solid white
 				box-shadow: 0px 0px 0px 27px rgba(255,255,255,0.3)
 				content: ""
 				display: block
-				//@include size(87% 110px)
 				@include size(100%)
 				margin: auto 
 				@include position(absolute, 0 0 0 0)
+				@include transition(all 0.3s ease-in-out)
+
+			&:hover .front 
+				width: 100%
+				height: auto
+				@include transition(all 0.3s ease-in-out)
+
+			&:hover:after
+				border-width: 1px
+				@include size(320px 120px)
+
 
 			.front 
-				width: 100%
-				height: 154px
+				width: 115%
+				height: auto
 
 			.back
 				@include position(absolute, 0 0 0 0)
