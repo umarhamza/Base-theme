@@ -55,9 +55,6 @@ gulp.task('sass', function() {
 	// find the sass files and extentions. return make browserSync wait for sass to be processed
 	return gulp.src('./_/components/sass/**/*.{scss,sass}')
 
-	// error handling
-	.pipe(sass().on('error', sass.logError))
-
 	// initialise sourcemaps
 	.pipe(sourcemaps.init())
 	
