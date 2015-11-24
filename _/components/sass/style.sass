@@ -49,11 +49,11 @@ $header_height 			: 			150px
 			z-index: 0
 
 		&:before
-			@include position(absolute, -2px 0 0 0) 
+			+position(absolute, -2px 0 0 0) 
 
 		&:after
-			@include position(absolute, 8px 0 0 0)
-			@include calc(width, "#{$accent_width} - 40px")
+			+position(absolute, 8px 0 0 0)
+			+calc(width, "#{$accent_width} - 40px")
 
 		h2
 			font-size: 32px
@@ -63,11 +63,10 @@ $header_height 			: 			150px
 			color: $title_color
 			text-align: center
 			background: $background
-			@include calc(width, "#{$accent_width} - 90px")
+			+calc(width, "#{$accent_width} - 90px")
 			margin: 15px auto 50px
 			z-index: 1 
 	
-
 //extended/helper classes 
 .clearfix 
   &:after 
@@ -90,10 +89,10 @@ $header_height 			: 			150px
 	font-family: lato, sans-serif
 	box-sizing: border-box
 	position: relative
-	@include transition(all 0.3s ease-in-out)
+	+transition(all 0.3s ease-in-out)
 
 	&:hover
-		@include transition(all 0.3s ease-in-out)
+		+transition(all 0.3s ease-in-out)
 
 html,
 body
@@ -108,7 +107,7 @@ section
 	width: 100%
 
 .container
-	@include outer-container 
+	+outer-container 
 	margin: 0 auto
 	@extend .clearfix
 
@@ -136,7 +135,7 @@ section
 		&:hover a 
 			color: white
 
-	@include direction-context(left-to-right)
+	+direction-context(left-to-right)
 		.welcome
 			button
 				margin: 0
@@ -146,9 +145,9 @@ section
 				text-decoration: none
 				display: block
 
-	@include direction-context(right-to-left)
+	+direction-context(right-to-left)
 		.shop-btns
-			@include span-columns(4)
+			+span-columns(4)
 			width: auto 
 			height: 100%
 
@@ -158,13 +157,13 @@ section
 		height: $header_height
 	
 	.branding
-		@include span-columns(2) 
+		+span-columns(2) 
 
 		a 
 			display: block
 
 		.logo
-			@include hide-text
+			+hide-text
 			background: 
 				image: url("../images/logo.svg")
 				repeat: no-repeat
@@ -172,17 +171,16 @@ section
 				size: contain
 			height: $header_height  
 			margin: 0
-			height: $header_height
 
 #navbar
-	@include span-columns(10)
+	+span-columns(10)
 
 	*
 		height: inherit
 
-	@include direction-context(right-to-left)  
+	+direction-context(right-to-left)  
 		.nav-wrap
-			@include span-columns(10)
+			+span-columns(10)
 
 	ul
 		height: $header_height
@@ -193,7 +191,7 @@ section
 	li
 		display: inline-block
 		@extend .transition
-		@include links($dark_red, $dark_red, white, white)
+		+links($dark_red, $dark_red, white, white)
 
 		.home
 			background: $mid_red
@@ -210,14 +208,18 @@ section
 		display: table-cell
 		height: $header_height
 
+	i
+		line-height: $header_height
+		color: $dark_red
+
 #header-search-bar
 	height: 80px
 	padding: 10px 0
 	background: $dark_gray
 
-	@include direction-context(right-to-left)  
+	+direction-context(right-to-left)  
 		form
-			@include span-columns(6)
+			+span-columns(6)
 
 			label
 				text-indent: -1000px
@@ -225,9 +227,20 @@ section
 				height: auto 
 
 			.search-field
-				width: 100%
-				max-width: 260px
-				padding: 1rem 2rem 1rem 4rem
+				width: 411px
+				float: left
+				padding: 1rem 2rem 1rem 1rem
+
+			input[type="submit"]
+				float: left
+				padding: 1.23rem 0.5em
+				background: 
+					image: url('../images/search-icon.svg') 
+					repeat: no-repeat 
+					position: center
+					color: $light_gray
+				color: transparent
+				border: none
 
 // home hero
 #splash-header
@@ -236,11 +249,11 @@ section
 		image: url("../images/home_slider.jpg")
 		repeat: no-repeat
 		size: cover
-	@include align-items(center)
-	@include display(flex)
+	+align-items(center)
+	+display(flex)
 
 	.container
-		@include flex(1)
+		+flex(1)
 
 
 		.hero-txt-wrap
@@ -261,15 +274,15 @@ section
 	text-align: center
 
 #row1 
-	@include row_title($mid_gray, white, $lighter_gray, 300px)
+	+row_title($mid_gray, white, $lighter_gray, 300px)
 
 	.pod-wrap
-		@include span-columns(12)
+		+span-columns(12)
 
 		.pod 
 			background: $dark_gray
 			position: relative 
-			@include span-columns(3 of 12) 
+			+span-columns(3 of 12) 
 			height: 356px
 
 			a 
@@ -281,27 +294,27 @@ section
 				width: 100%
 
 			.back
-				@include position(absolute, 0 0 0 0)
+				+position(absolute, 0 0 0 0)
 				margin: auto
 
 			&:hover img.front
 				transform: scale(1)
-				@include transition-delay(0.2s)
+				+transition-delay(0.2s)
 
 #row2
 	background: #ededed
 
 	.container
-		@include display(flex)
-		@include align-items(center)
-		@include justify-content(center)
+		+display(flex)
+		+align-items(center)
+		+justify-content(center)
 
 		.image 
 			border-right: 1px solid #d4d4d4
 			padding-right: 30px
 			margin-right: 30px
 			img
-				@include size(140px 140px)
+				+size(140px 140px)
 				border-radius: 50%
 
 		.text 
@@ -323,26 +336,26 @@ section
 #row3
 	background: $dark_gray url('../images/pattern.png') repeat center center
 
-	@include row_title($dark_red, $red, $dark_red, 300px)
+	+row_title($dark_red, $red, $dark_red, 300px)
 
 	.h2-wrap
 		background: $red
 		padding: 10px
-		@include margin(-50px null 20px null)
+		+margin(-50px null 20px null)
 
 		h2
 			padding: 0
-			@include margin(0 null 0 null)
+			+margin(0 null 0 null)
 
 	.pod-wrap
-		@include span-columns(12) 
+		+span-columns(12) 
 
 		.pod
 			position: relative 
 			overflow: hidden
 			height: 150px			
-			@include span-columns(4 of 12) 
-			@include transition(all 0.3s ease-in-out)
+			+span-columns(4 of 12) 
+			+transition(all 0.3s ease-in-out)
 
 			a
 				display: block
@@ -352,19 +365,19 @@ section
 				box-shadow: 0px 0px 0px 27px rgba(255,255,255,0.3)
 				content: ""
 				display: block
-				@include size(100%)
+				+size(100%)
 				margin: auto 
-				@include position(absolute, 0 0 0 0)
-				@include transition(all 0.3s ease-in-out)
+				+position(absolute, 0 0 0 0)
+				+transition(all 0.3s ease-in-out)
 
 			&:hover .front 
 				width: 100%
 				height: auto
-				@include transition(all 0.3s ease-in-out)
+				+transition(all 0.3s ease-in-out)
 
 			&:hover:after
 				border-width: 1px
-				@include size(320px 120px)
+				+size(320px 120px)
 
 
 			.front 
@@ -372,24 +385,24 @@ section
 				height: auto
 
 			.back
-				@include position(absolute, 0 0 0 0)
+				+position(absolute, 0 0 0 0)
 				margin: auto
 
 #row4
 
-	@include row_title($dark_gray, white, $lighter-gray, 600px)
+	+row_title($dark_gray, white, $lighter-gray, 600px)
 
 	.pod
 		position: relative 
 		overflow: hidden
-		@include span-columns(3 of 12) 	
+		+span-columns(3 of 12) 	
 
-		@include transition(all 0.3s ease-in-out)
-		@include transition-delay(0.1s)
+		+transition(all 0.3s ease-in-out)
+		+transition-delay(0.1s)
 
 		&:hover
-			@include transition(all 0.3s ease-in-out)
-			@include transition-delay(0.1s)
+			+transition(all 0.3s ease-in-out)
+			+transition-delay(0.1s)
 
 		img
 			width: 100%
@@ -402,7 +415,7 @@ section
 			text-align: left
 			font-size: 13px
 			height: 176px
-			@include position(absolute, 145px 0 0 0)
+			+position(absolute, 145px 0 0 0)
 			transform: translate(0px, 180px)
 
 			h3
@@ -419,12 +432,12 @@ section
 
 			p 
 				line-height: 18px
-				@include margin(10px null 10px null) 
+				+margin(10px null 10px null) 
 
 				&:after
 					content: ""
 					display: block
-					@include size(100px 1px)
+					+size(100px 1px)
 					background: #aaa
 					margin-top: 10px
 
@@ -445,19 +458,19 @@ section
 			padding: 17px
 			margin-top: -4px
 			display: flex
-			@include justify-content(space-between)
+			+justify-content(space-between)
 			overflow: hidden
-			@include transition(all 0.3s ease-in-out)
-			@include transition-delay(0.1s)
+			+transition(all 0.3s ease-in-out)
+			+transition-delay(0.1s)
 
 			&:before
 				content: ""
 				display: block
 				background: $red
-				@include position(absolute, 0 0 0 0)
+				+position(absolute, 0 0 0 0)
 				transform: translate(0px, -55px)
-				@include transition(all 0.3s ease-in-out)
-				@include transition-delay(0.1s)
+				+transition(all 0.3s ease-in-out)
+				+transition-delay(0.1s)
 
 		&:hover img
 			transform: translate(0px, -100px)
@@ -467,8 +480,8 @@ section
 
 		&:hover .add-to-cart-wrap:before
 			transform: translate(0px, 0px)
-			@include transition(all 0.3s ease-in-out)
-			@include transition-delay(0.1s)
+			+transition(all 0.3s ease-in-out)
+			+transition-delay(0.1s)
 			
 			button 
 				padding: 0
