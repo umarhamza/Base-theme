@@ -1,75 +1,25 @@
 // imports
 @import 'normalize'
+@import 'variables'
 @import 'bourbon/bourbon'
-@import 'neat/neat'
-
-// color variables
-$lighter_gray 			: 			#dddddd
-$light_gray 			: 			#a3a3a3
-$mid_gray 				: 			#353533
-$dark_gray 				: 			#2e2e2c
-$red 					: 			#f45245
-$mid_red 				: 			#E65043
-$dark_red 				: 			#af2d23
-
-// font sizes
-$hero_h2_font			: 			70px
-$h3_font				: 			25px
-$hero_btn_font 			: 			16px
-
-// size variable
-$thin_bar 				: 			50px
-$header_height 			: 			150px
+@import 'neat/neat' 
 
 // mixins 
-@mixin links ($link, $visit, $hover, $active)  
+@mixin links ($link, $visit, $hover, $active) 
   a  
     color: $link  	
     &:visited  
       color: $visit  	
       
     &:hover  
-      color: $hover  	   
+      color: $hover     
       
     &:active  
       color: $active  	
-
-@mixin row_title($title_color, $background, $accent_color, $accent_width)
-	.h2-accent
-		position: relative
-
-		&:before,
-		&:after
-			background: $accent_color
-			width: $accent_width
-			height: 2px
-			content: ""
-			display: block
-			margin: auto
-			z-index: 0
-
-		&:before
-			+position(absolute, -2px 0 0 0) 
-
-		&:after
-			+position(absolute, 8px 0 0 0)
-			+calc(width, "#{$accent_width} - 40px")
-
-		h2
-			font-size: 32px
-			font-weight: bold
-			font-style: normal
-			text-transform: uppercase
-			color: $title_color
-			text-align: center
-			background: $background
-			+calc(width, "#{$accent_width} - 90px")
-			margin: 15px auto 50px
-			z-index: 1 
 	
 //extended/helper classes 
 .clearfix 
-  &:after 
+  &::after 
     content: "" 
     display: table 
     clear: both 
@@ -274,8 +224,6 @@ section
 	text-align: center
 
 #row1 
-	+row_title($mid_gray, white, $lighter_gray, 300px)
-
 	.pod-wrap
 		+span-columns(12)
 
@@ -336,8 +284,6 @@ section
 #row3
 	background: $dark_gray url('../images/pattern.png') repeat center center
 
-	+row_title($dark_red, $red, $dark_red, 300px)
-
 	.h2-wrap
 		background: $red
 		padding: 10px
@@ -389,8 +335,6 @@ section
 				margin: auto
 
 #row4
-
-	+row_title($dark_gray, white, $lighter-gray, 600px)
 
 	.pod
 		position: relative 
@@ -487,6 +431,28 @@ section
 				padding: 0
 
 
+.products
+	&--title
+		font-size: 32px
+		font-weight: 400
+		text-transform: uppercase
+		color: $mid_gray
+		text-align: center
+		background: transparent
+		//margin: 15px auto 50px
+
+		span
+			font-style: italic
+			color: $light-gray
+
+	&--pod 
+		position: relative
+		//overflow: hidden
+		+span-columns(4 of 12) 
+.pod 
+	&--description
+		background: white
+		padding: 20px
 
 
 

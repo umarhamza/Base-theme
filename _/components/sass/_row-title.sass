@@ -1,0 +1,32 @@
+@mixin row_title($title_color, $background, $accent_color, $accent_width)
+	.h2-accent
+		position: relative
+
+		&:before,
+		&:after
+			background: $accent_color
+			width: $accent_width
+			height: 2px
+			content: ""
+			display: block
+			margin: auto
+			z-index: 0
+
+		&:before
+			+position(absolute, -2px 0 0 0) 
+
+		&:after
+			+position(absolute, 8px 0 0 0)
+			+calc(width, "#{$accent_width} - 40px")
+
+		h2
+			font-size: 32px
+			font-weight: bold
+			font-style: normal
+			text-transform: uppercase
+			color: red
+			text-align: center
+			background: transparent
+			+calc(width, "#{$accent_width} - 90px")
+			margin: 15px auto 50px
+			z-index: 1 

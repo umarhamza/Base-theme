@@ -63,6 +63,8 @@ gulp.task('sass', function() {
 		errLogToConsole: true
 	}))
 
+	.on('error', onError)
+
 	// compile sass the source map 
 	.pipe(sourcemaps.write())
 
@@ -74,5 +76,11 @@ gulp.task('sass', function() {
 
 });//gulp sass
 
+function onError(err) {
+  console.log(err);
+  this.emit('end');
+}
+
 // Create Gulp Default Task
 gulp.task('default', ['serve']);
+
