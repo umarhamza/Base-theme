@@ -18,7 +18,7 @@
       color: $active  	
 	
 //extended/helper classes 
-.clearfix 
+.clearfix  
   &::after 
     content: "" 
     display: table 
@@ -32,6 +32,15 @@
 
 .transition
 	transition: all 0.3s ease-in-out
+
+.col-3 .pod
+	+span-columns(4 of 12) 	
+	img
+		width: 100%
+
+.col-4 .pod
+	+span-columns(3 of 12) 	
+
 
 // global
 
@@ -334,12 +343,10 @@ section
 				+position(absolute, 0 0 0 0)
 				margin: auto
 
-#row4
-
+.products 
 	.pod
 		position: relative 
 		overflow: hidden
-		+span-columns(3 of 12) 	
 
 		+transition(all 0.3s ease-in-out)
 		+transition-delay(0.1s)
@@ -431,28 +438,37 @@ section
 				padding: 0
 
 
-.products
-	&--title
-		font-size: 32px
-		font-weight: 400
-		text-transform: uppercase
-		color: $mid_gray
-		text-align: center
-		background: transparent
-		//margin: 15px auto 50px
+#row5
+	background-color: $lighter_gray 
 
-		span
-			font-style: italic
-			color: $light-gray
+.title-carousel
+		background-color: $mid_gray
+		+size(400px 68px)
+		margin: 0 auto 60px
+		color: white
 
-	&--pod 
-		position: relative
-		//overflow: hidden
-		+span-columns(4 of 12) 
-.pod 
-	&--description
-		background: white
-		padding: 20px
+		h2
+			display: inline-block
+			line-height: 68px
+			margin: 0
+			padding: 0
+
+		span.fa
+			font-size: 32px
+			background: $light_gray
+			padding: 18px
+
+
+		span.fa-angle-left
+				float: left
+
+		span.fa-angle-right
+				float: right
+
+.pod.grayed-out
+	opacity: .4
+	pointer-events: none
+
 
 
 
