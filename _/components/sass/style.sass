@@ -61,6 +61,17 @@ a
 	color: inherit
 	text-decoration: inherit
 
+.button
+	color: white
+	text-transform: uppercase
+	text-align: center
+	padding: 18px 35px
+	border: 1px solid white
+
+	&:hover
+		background: white
+		color: $red
+
 // page styles
 section
 	width: 100%
@@ -468,6 +479,72 @@ section
 .pod.grayed-out
 	opacity: .4
 	pointer-events: none
+
+.blog-posts
+	.pod
+		background-color: $lighter_gray
+		padding: 15px
+		text-align: left
+
+		&--image
+			position: relative
+			display: block
+
+			&::after
+				display: none
+				content: ""
+				+size(95% 90%)
+				border: 1px solid white
+				+position(absolute, 0 0 0 0)
+				margin: auto
+
+		&:hover .pod--image::after
+			display: block
+
+	h3
+		font-size: 22px
+		text-transform: uppercase
+
+	&--details
+		padding: 0
+		margin: 0
+
+	&--details li
+		display: inline-block
+		margin-right: 15px
+		
+		i
+			margin-right: 6px		
+
+.parallax
+	background:
+		image: url("../images/bg_parallax.jpg")
+		size: cover
+		position: center
+		attachment: fixed
+	min-height: 580px
+	+display(flex)
+	+align-items(center)
+
+	h2
+		color: white
+		font-size: 60px
+		text-transform: uppercase
+		margin-bottom: 70px
+
+		span
+			display: block
+			+hide-text
+
+			background: 
+				image: 	url("../images/logo.svg") 
+				repeat: no-repeat 
+				position: center
+				size: contain
+
+
+
+		
 
 
 
