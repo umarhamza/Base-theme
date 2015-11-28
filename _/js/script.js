@@ -1,0 +1,1 @@
+!function(){"use strict";var e=document.querySelector("#header-search-bar"),t=document.querySelector("#search-btn");t.addEventListener("click",function(){e.classList.toggle("show")},!1)}();

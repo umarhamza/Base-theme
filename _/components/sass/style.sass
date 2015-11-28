@@ -14,6 +14,12 @@
     display: table 
     clear: both 
 
+.hide
+	display: none
+
+.show
+	display: block
+
 .transition
 	transition: all 0.3s ease-in-out
  
@@ -40,6 +46,24 @@
 		background: white
 		color: $red
 
+.title-bg 
+	h2::after, h2::before
+		display: inline-block
+		content: ""
+		background: 
+			size: cover
+			repeat: no-repeat
+			position: center
+		+size(84px 8px)
+		margin-bottom: 0.2em
+
+	h2::after
+		background-image: url("../images/right_accent.png")
+		margin-left: 0.3em
+
+	h2::before
+		background-image: url("../images/left_accent.png")
+		margin-right: 0.3em
 
 // global
 
@@ -182,6 +206,7 @@ section
 	i
 		line-height: $header_height
 		color: $dark_red
+		cursor: pointer
 
 #header-search-bar
 	height: 80px
