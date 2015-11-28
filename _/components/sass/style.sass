@@ -41,6 +41,22 @@
 .col-4 .pod
 	+span-columns(3 of 12) 	
 
+.col-6 .pod
+	+span-columns(2 of 12) 	
+
+.col-2 .col
+	+span-columns(6 of 12)
+
+.read-more
+	background: $red
+	color: white
+	display: inline-block
+	margin-top: 5px
+	padding: 8px 14px 10px
+
+.read-more:hover
+	background: $dark_red
+
 
 // global
 
@@ -60,6 +76,10 @@ body
 a
 	color: inherit
 	text-decoration: inherit
+
+ul
+	padding-left: 20px
+	margin: 0
 
 .button
 	color: white
@@ -468,6 +488,7 @@ section
 			font-size: 32px
 			background: $light_gray
 			padding: 18px
+			cursor: pointer
 
 
 		span.fa-angle-left
@@ -504,6 +525,7 @@ section
 	h3
 		font-size: 22px
 		text-transform: uppercase
+		margin-bottom: 15px
 
 	&--details
 		padding: 0
@@ -542,9 +564,99 @@ section
 				position: center
 				size: contain
 
+.logo-strip
+	background: $lighter_gray
+	padding: 60px 0
 
+.counters
+	.pod
+		color: $mid_gray
 
-		
+		i
+			font-size: 25px
+			border: 2px solid $dark_gray
+			+size(70px 70px)
+			padding-top: 23px
+
+		h4
+			font-size: 40px
+			+margin(20px null 10px null)
+
+			&::after
+				display: block
+				content: ""
+				+size(70px 1.5px)
+				background: $lighter_gray
+				margin: 8px auto 5px
+
+		p
+			margin: 0
+			text-transform: uppercase
+
+		&:hover i
+			box-shadow: 0px 0px 0px 5px $red
+			border-color: white
+			background-color: $red
+			color: white
+
+		&:hover
+			h4, p
+				color: $red
+
+.breadcrumb-and-share	
+	background: $red
+	padding: 15px 0
+
+	ul
+		padding: 0 
+		margin: 0
+
+		li 
+			display: inline-block
+
+			a
+				display: block
+
+				&:hover
+					background: $dark_red 
+
+	.breadcrumb
+		text-align: left
+
+		a
+			+size(auto 40px)
+			padding: 10px 15px 10px
+			background: $red2
+			display: block 
+			color: white
+
+	.social-icons 
+		text-align: right
+
+		a
+			+size(40px)
+			background-color: $red2
+			color: white
+			font-size: 14px
+			padding-top: 11px
+			text-align: center
+			display: block
+
+#footer
+	background-color: $dark_gray
+	padding: 80px 0
+	text-align: left
+	color: $light_gray
+
+	h3 
+		color: white
+		text-transform: uppercase
+		font-size: 30px
+		margin: 0 0 20px 0
+
+	a:hover
+		text-decoration: underline
+	
 
 
 
