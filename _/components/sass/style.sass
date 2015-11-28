@@ -1,61 +1,44 @@
 // imports
 @import 'normalize'
-@import 'variables'
+@import '01_settings/variables'
 @import 'bourbon/bourbon'
 @import 'neat/neat' 
-
-// mixins 
-@mixin links ($link, $visit, $hover, $active) 
-  a  
-    color: $link  	
-    &:visited  
-      color: $visit  	
-      
-    &:hover  
-      color: $hover     
-      
-    &:active  
-      color: $active  	
-	
+@import '01_settings/grid-settings'
+@import '01_settings/my-grid'
+@import '01_settings/mixins'
+  
 //extended/helper classes 
-.clearfix  
+.clearfix   
   &::after 
     content: "" 
     display: table 
     clear: both 
 
-.float-right
-	float: right
-
-.float-left
-	float: left
-
 .transition
 	transition: all 0.3s ease-in-out
-
-.col-3 .pod
-	+span-columns(4 of 12) 	
-	img
-		width: 100%
-
-.col-4 .pod
-	+span-columns(3 of 12) 	
-
-.col-6 .pod
-	+span-columns(2 of 12) 	
-
-.col-2 .col
-	+span-columns(6 of 12)
-
+ 
 .read-more
-	background: $red
+	background-color: $red
 	color: white
 	display: inline-block
 	margin-top: 5px
 	padding: 8px 14px 10px
 
-.read-more:hover
-	background: $dark_red
+	&:hover
+		background-color: $dark_red
+
+.button
+	color: white
+	text-transform: uppercase
+	text-align: center
+	padding: 18px 35px
+	border: 2px solid white
+	display: inline-block
+
+
+	&:hover
+		background: white
+		color: $red
 
 
 // global
@@ -81,16 +64,14 @@ ul
 	padding-left: 20px
 	margin: 0
 
-.button
-	color: white
+h2 
+	font-size: 32px
+	font-weight: 400
+	color: $mid_gray
 	text-transform: uppercase
-	text-align: center
-	padding: 18px 35px
-	border: 1px solid white
 
-	&:hover
-		background: white
-		color: $red
+h3
+	font-size: 25px
 
 // page styles
 section
@@ -249,15 +230,21 @@ section
 		.hero-txt-wrap
 			text-align: center
 			color: white
+
 			h2 
-				font-size: $hero_h2_font
+				font-size: $hero_font_size
+				font-weight: bold
+				color: white
 				margin: 0
+
 			h3
-				font-size: $h3_font
-			button
+				font-size: $h3_font_size
+
+			.button
 				font-size: $hero_btn_font
 				border: 2px solid white
 				padding: 10px 20px
+				margin-top: 20px
 
 .row
 	padding: 50px 0
@@ -270,8 +257,9 @@ section
 		.pod 
 			background: $dark_gray
 			position: relative 
-			+span-columns(3 of 12) 
 			height: 356px
+			+media($mobile)
+				+span-columns(3 of 12) 
 
 			a 
 				display: block
@@ -346,7 +334,7 @@ section
 			a
 				display: block
 			
-			&:after
+			&::after
 				border: 0px solid white
 				box-shadow: 0px 0px 0px 27px rgba(255,255,255,0.3)
 				content: ""
@@ -396,9 +384,9 @@ section
 			padding: 10px 12px
 			text-align: left
 			font-size: 13px
-			height: 176px
-			+position(absolute, 145px 0 0 0)
-			transform: translate(0px, 180px)
+			height: 350px
+			+position(absolute, 130px 0 0 0)
+			transform: translate(0px, 250px)
 
 			h3
 				font-size: 18px
@@ -469,7 +457,7 @@ section
 				padding: 0
 
 
-#row5
+.best-seller
 	background-color: $lighter_gray 
 
 .title-carousel
@@ -481,6 +469,7 @@ section
 		h2
 			display: inline-block
 			line-height: 68px
+			color: inherit
 			margin: 0
 			padding: 0
 
@@ -489,6 +478,9 @@ section
 			background: $light_gray
 			padding: 18px
 			cursor: pointer
+
+			&:hover
+				background: $red
 
 
 		span.fa-angle-left
@@ -651,8 +643,10 @@ section
 	h3 
 		color: white
 		text-transform: uppercase
-		font-size: 30px
 		margin: 0 0 20px 0
+
+	p, li
+		font-size: 14px
 
 	a:hover
 		text-decoration: underline
