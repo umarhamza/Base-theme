@@ -6,15 +6,13 @@
 	.st0{fill:#CCCCCC;}
 </style>
 <g>
-	<g>
-		<rect x="127.875" y="0" class="st0" width="66.125" height="2.125"/>
-		<rect x="127.875" y="6" class="st0" width="46.25" height="2.125"/>
-		<circle class="st0" cx="112.469" cy="3.531" r="2.469"/>
-	</g>
-	<g>
-		<rect x="0" y="0" class="st0" width="66.125" height="2.125"/>
-		<rect x="19.875" y="6" class="st0" width="46.25" height="2.125"/>
-		<circle class="st0" cx="81.531" cy="3.531" r="2.469"/>
-	</g>
+	<rect x="127.875" y="0" class="st0" width="66.125" height="2.125"/>
+	<rect x="127.875" y="6" class="st0" width="46.25" height="2.125"/>
+	<circle class="st0" cx="112.469" cy="3.531" r="2.469"/>
+</g>
+<g>
+	<rect x="0" y="0" class="st0" width="66.125" height="2.125"/>
+	<rect x="19.875" y="6" class="st0" width="46.25" height="2.125"/>
+	<circle class="st0" cx="81.531" cy="3.531" r="2.469"/>
 </g>
 </svg>
