@@ -96,6 +96,10 @@ h2
 h3
 	font-size: 25px
 
+img
+	width: 100%
+	height: auto
+
 // page styles
 section
 	width: 100%
@@ -350,8 +354,11 @@ section
 			position: relative 
 			overflow: hidden
 			height: 150px			
-			+span-columns(4 of 12) 
+			//+span-columns(4 of 12) 
 			+transition(all 0.3s ease-in-out)
+			
+			img 
+				width: auto
 
 			a
 				display: block
@@ -479,7 +486,15 @@ section
 				padding: 0
 
 
-.best-seller
+.carousel 
+	.pod-wrap
+		width: 100%
+		overflow-x: scroll
+	
+	.overflow-scroll 
+		width: 1920px
+
+.carousel.best-seller
 	background-color: $lighter_gray 
 
 .title-carousel

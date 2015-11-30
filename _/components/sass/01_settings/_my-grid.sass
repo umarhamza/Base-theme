@@ -1,10 +1,5 @@
 // grid
-+media($tablet)
-
-	.col-3 .col
-		+span-columns(4 of 12) 	
-		img
-			width: 100%
++media($tablet)	
 
 	.col-6 .col
 		+span-columns(2 of 12) 	
@@ -13,11 +8,18 @@
 		+span-columns(6 of 12)
 
 @media screen and (min-width: 768px)
+
+	.col-3 .col
+		float: left
+		display: block
+		margin-right: 2.35765%
+		max-width: 31.76157%;
+
 	.col-4 .col	
 		float: left
 		display: block
 		margin-right: 2.35765%
-		width: 23.23176%
+		max-width: 23.23176%
 
-		&:last-child
-			margin-right: 0
+	.col:last-child
+		margin-right: 0
