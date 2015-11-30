@@ -1,0 +1,41 @@
+.carousel 
+	.pod-wrap
+		width: 100%
+		overflow-x: scroll
+	
+	.overflow-scroll 
+		width: 10000px
+
+.carousel-title
+		background-color: $mid_gray
+		+size(400px 68px)
+		margin: 0 auto 60px
+		color: white
+
+		h2
+			display: inline-block
+			line-height: 68px
+			color: inherit
+			margin: 0
+			padding: 0
+
+		span.arrows
+			font-size: 32px
+			background: $light_gray
+			padding: 18px
+			cursor: pointer
+			display: none
+
+			&:hover
+				background: $red
+
+
+		span.fa-angle-left
+				float: left
+
+		span.fa-angle-right
+				float: right
+
+.pod.grayed-out
+	opacity: .4
+	pointer-events: none

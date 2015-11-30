@@ -36,7 +36,7 @@ gulp.task('serve', function() {
 gulp.task('uglify', function() {
 
 	// find the js files and return
-	return gulp.src('./_/components/js/*.js')
+	return gulp.src('./_/components/js/**/*.js')
 
 	// compress the js files
 	.pipe(uglify())

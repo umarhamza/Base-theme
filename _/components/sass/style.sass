@@ -5,6 +5,7 @@
 @import 'neat/neat' 
 @import '01_settings/my-grid'
 @import '01_settings/mixins'
+@import '02_modules/carousel'
   
 //extended/helper classes 
 .clearfix   
@@ -17,7 +18,7 @@
 	display: none
 
 .show
-	display: block
+	display: block !important
 
 .transition
 	transition: all 0.3s ease-in-out
@@ -97,7 +98,7 @@ h3
 	font-size: 25px
 
 img
-	width: 100%
+	width: auto
 	height: auto
 
 // page styles
@@ -485,50 +486,8 @@ section
 			button 
 				padding: 0
 
-
-.carousel 
-	.pod-wrap
-		width: 100%
-		overflow-x: scroll
-	
-	.overflow-scroll 
-		width: 1920px
-
 .carousel.best-seller
 	background-color: $lighter_gray 
-
-.title-carousel
-		background-color: $mid_gray
-		+size(400px 68px)
-		margin: 0 auto 60px
-		color: white
-
-		h2
-			display: inline-block
-			line-height: 68px
-			color: inherit
-			margin: 0
-			padding: 0
-
-		span.fa
-			font-size: 32px
-			background: $light_gray
-			padding: 18px
-			cursor: pointer
-
-			&:hover
-				background: $red
-
-
-		span.fa-angle-left
-				float: left
-
-		span.fa-angle-right
-				float: right
-
-.pod.grayed-out
-	opacity: .4
-	pointer-events: none
 
 .blog-posts
 	.pod
@@ -539,6 +498,9 @@ section
 		&--image
 			position: relative
 			display: block
+
+			img
+				width: 100%
 
 			&::after
 				display: none
