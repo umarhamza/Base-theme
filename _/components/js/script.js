@@ -21,13 +21,15 @@ searchButton.addEventListener('click', function() {
 		carouselWrap = document.querySelector('.carousel .pod-wrap'),
 		carousel = carouselWrap.querySelector('.overflow-scroll'),
 		imgs = carouselWrap.querySelectorAll('.col'),
-		imgWidth = imgs[0].clientWidth, // 270
-		imgMarginR =  parseInt(window.getComputedStyle(imgs[0]).getPropertyValue("margin-right")),
-		widthMargin =  imgWidth + imgMarginR,
+		imgWidth = imgs[0].clientWidth, // 253
+		imgMarginR =  parseInt(window.getComputedStyle(imgs[0], null).getPropertyValue("margin-right")),
+		widthMargin =  imgWidth + imgMarginR, // 278
+		loc = widthMargin, // 278
 		imgLen = imgs.length, // 6
 		current = 1,
 		totalImgWidth = imgLen * imgWidth; // 1620 
-	
+
+
 	// making carousel buttons visible
 
 	for (var i = 0; i < buttons.length; i++) { 
@@ -41,35 +43,42 @@ searchButton.addEventListener('click', function() {
 	buttonWrap.addEventListener('click', function (e) {
 		if (e.target.classList.contains('arrows') == true) {
 		
-		var direction = e.target.getAttribute('data-dir');
-		
+		var direction = e.target.getAttribute('data-dir');		
 		// update current value	
 		(direction === 'next') ? ++current : --current;  //terinery operator for if (direction === 'next') { current += 1; } else {current -= 1}; 
 		
 		// if first image
-		if (current === 0) {
-			current = imgLen;
+		if (current === 0) { // are we going beyond the first image
+			current = imgLen; // change current to 6
+			loc = totalImgWidth;
 			direction = 'next';
-		} else if(current - 1 === imgLen){
-			current = 1;
+		} else if(current - 1 === imgLen){ // are we at the end? Should we reset
+			current = 1; // send back to the first image 
+			loc = 0;
 		}
 
-			carousel.style.marginLeft = '-' + widthMargin + 'px';
+		transition(carousel, direction, widthMargin);
 
-			widthMargin = widthMargin + widthMargin;
+// my code : moving things forward
+// carousel.style.marginLeft = '-' + counter + 'px';
+// counter += widthMargin;
 
-		console.log(widthMargin);
-
-
-		transition();
-
-			
 		}; // if has class arrow
 	}, false);
 
-function transition() {
+//transition function
+function transition( container, direction, width ) {
 
+	var unit; // - or +
+
+	if (direction && loc !== 0) {
+		unit = (direction === 'next') ? '-' : '+';
+	};
+
+	container.style.marginLeft = '-' + loc + 'px';
+
+	loc += width;
+	
 }
-	console.dir(carousel);
 
 })();  
