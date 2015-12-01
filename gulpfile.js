@@ -40,6 +40,8 @@ gulp.task('uglify', function() {
 
 	// compress the js files
 	.pipe(uglify())
+
+	.on('error', onError)
 	
 	// output js into js dir
 	.pipe(gulp.dest('./_/js'))
