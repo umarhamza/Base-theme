@@ -9,7 +9,7 @@ var headerSearchBar = document.querySelector('#header-search-bar'),
 searchButton.addEventListener('click', function() {
 	headerSearchBar.classList.toggle('show');
 }, false); 
-
+ 
 })();
 
 //carousel
