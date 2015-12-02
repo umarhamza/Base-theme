@@ -82,3 +82,28 @@ function transition( container, direction, width ) {
 }
 
 })();  
+
+// scroll func
+(function() {
+	"use strict"
+
+	var header = document.querySelector('#header'),
+		shrinkOn = 600;
+
+	window.addEventListener('scroll', function scrollFunc() {
+		
+		var distanceY = window.pageYOffset || document.documentElement.scrollTop;
+
+		if (distanceY > shrinkOn) {
+			header.className = 'shrink-header';
+			//window.removeEventListener(scroll, scrollFunc, false);
+		} else {
+			header.removeAttribute('class', 'shrink-header');
+
+		};
+
+		console.log(window.pageYOffset );
+
+	}, false);
+
+})();
