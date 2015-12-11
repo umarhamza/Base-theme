@@ -162,9 +162,9 @@ section
 	.container
 		height: $header_height
 	
-	.branding
-		+span-columns(2) 
-
+	.branding 
+		@extend .col-2 
+		
 		a 
 			display: block
 
@@ -179,7 +179,7 @@ section
 			margin: 0
 
 #navbar
-	+span-columns(10)
+	//+span-columns(10)
 
 	*
 		height: inherit
