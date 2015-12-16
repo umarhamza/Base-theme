@@ -2,6 +2,8 @@
 @import 'normalize'
 @import '01_settings/variables'
 @import 'bourbon/bourbon'
+// optionally call font awesome in
+//@import 'font-awesome/font-awesome'
 @import 'neat/neat' 
 @import '01_settings/my-grid'
 @import '01_settings/mixins'
@@ -16,7 +18,7 @@
 
 .hide
 	display: none
-
+ 
 .show
 	display: block !important
 
@@ -180,9 +182,6 @@ section
 
 #navbar
 	//+span-columns(10)
-
-	*
-		height: inherit
 
 	+direction-context(right-to-left)  
 		.nav-wrap
