@@ -22,13 +22,6 @@
 .show
 	display: block !important
 
-.shrink-header
-	position: fixed
-	top: 0
-	width: 100%
-	z-index: 10000
-	transition: all 0.3s ease-in-out
-
 .transition
 	transition: all 0.3s ease-in-out
  
@@ -115,7 +108,9 @@ section
 	width: 100%
 
 .container
-	+outer-container 
+	width: 100%
+	max-width: 1028px
+	padding: 0 20px
 	margin: 0 auto
 	@extend .clearfix
 
@@ -159,14 +154,27 @@ section
 			width: auto 
 			height: 100%
 
+.shrink-header
+	position: fixed
+	top: 0
+	width: 100%
+	z-index: 10000
+	transition: all 0.3s ease-in-out
+
 #header
 	background: $red
+
 	.container
 		height: $header_height
 	
 	.branding 
-		@extend .col-2 
-		
+		width: 100%
+		max-width: 180px
+		float: left
+		height: inherit
+
+		*
+			height: inherit
 		a 
 			display: block
 
@@ -177,21 +185,17 @@ section
 				repeat: no-repeat
 				position: center
 				size: contain
-			height: $header_height  
 			margin: 0
 
 #navbar
-	//+span-columns(10)
-
-	+direction-context(right-to-left)  
-		.nav-wrap
-			+span-columns(10)
+	.nav-wrap
+		text-align: right
 
 	ul
 		height: $header_height
 		margin: 0
 		padding: 0
-		float: left
+		float: right
 
 	li
 		display: inline-block
