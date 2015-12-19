@@ -2,19 +2,13 @@
 @import 'normalize'
 @import '01_settings/variables'
 @import 'bourbon/bourbon'
-// optionally call font awesome in
-//@import 'font-awesome/font-awesome'
+// Optionally call font awesome in 
+@import 'font-awesome/font-awesome'
 @import 'neat/neat' 
 @import '01_settings/my-grid'
 @import '01_settings/mixins'
+@import '02_modules/header'
 @import '02_modules/carousel'
-  
-//extended/helper classes 
-.clearfix   
-  &::after 
-    content: "" 
-    display: table 
-    clear: both 
 
 .hide
 	display: none
@@ -88,6 +82,7 @@ a
 
 ul
 	padding-left: 20px
+	padding: 0
 	margin: 0
 
 h2 
@@ -106,13 +101,6 @@ img
 // page styles
 section
 	width: 100%
-
-.container
-	width: 100%
-	max-width: 1028px
-	padding: 0 20px
-	margin: 0 auto
-	@extend .clearfix
 
 #topbar
 	background: $mid_gray
@@ -153,104 +141,6 @@ section
 			+span-columns(4)
 			width: auto 
 			height: 100%
-
-.shrink-header
-	position: fixed
-	top: 0
-	width: 100%
-	z-index: 10000
-	transition: all 0.3s ease-in-out
-
-#header
-	background: $red
-
-	.container
-		height: $header_height
-	
-	.branding 
-		width: 100%
-		max-width: 180px
-		float: left
-		height: inherit
-
-		*
-			height: inherit
-		a 
-			display: block
-
-		.logo
-			+hide-text
-			background: 
-				image: url("../images/logo.svg")
-				repeat: no-repeat
-				position: center
-				size: contain
-			margin: 0
-
-#navbar
-	.nav-wrap
-		text-align: right
-
-	ul
-		height: $header_height
-		margin: 0
-		padding: 0
-		float: right
-
-	li
-		display: inline-block
-		@extend .transition
-		+links($dark_red, $dark_red, white, white)
-
-		.home
-			background: $mid_red
-
-		&:hover
-			background: $mid_red
-
-	a
-		font-size: 16px
-		text-transform: uppercase
-		text-decoration: none
-		padding: 30px
-		vertical-align: middle
-		display: table-cell
-		height: $header_height
-
-	i
-		line-height: $header_height
-		color: $dark_red
-		cursor: pointer
-
-#header-search-bar
-	height: 80px
-	padding: 10px 0
-	background: $dark_gray
-
-	+direction-context(right-to-left)  
-		form
-			+span-columns(6)
-
-			label
-				text-indent: -1000px
-				color: $dark_gray
-				height: auto 
-
-			.search-field
-				width: 411px
-				float: left
-				padding: 1rem 2rem 1rem 1rem
-
-			input[type="submit"]
-				float: left
-				padding: 1.23rem 0.5em
-				background: 
-					image: url('../images/search-icon.svg') 
-					repeat: no-repeat 
-					position: center
-					color: $light_gray
-				color: transparent
-				border: none
 
 // home hero
 #splash-header
@@ -657,10 +547,7 @@ section
 	p, li
 		font-size: 14px
 
-	a:hover
+	a:hover  
 		text-decoration: underline
-	
 
-
-
-
+@import '02_modules/media-queries'  

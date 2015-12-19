@@ -1,0 +1,110 @@
+#header
+	background: $red
+	position: static
+
+	*
+		height: 100%
+
+	.container
+		height: $header_height
+	
+	.branding 
+		width: 100%
+		max-width: 180px
+		float: left
+
+	a 
+		display: block
+
+		.logo
+			+hide-text
+			background: 
+				image: url("../images/logo.svg")
+				repeat: no-repeat
+				position: center
+				size: contain
+			margin: 0
+
+#navbar
+	.nav-wrap
+		float: right
+
+	ul
+		float: left
+
+	li
+		display: inline-block
+		@extend .transition
+		+links($dark_red, $dark_red, white, white)
+
+		.home
+			background: $mid_red
+
+		&:hover
+			background: $mid_red 
+
+	a
+		font-size: 16px
+		text-transform: uppercase
+		text-decoration: none
+		padding: 51px 30px
+		vertical-align: middle
+		display: table-cell
+
+	i
+		line-height: inherit
+		color: $dark_red
+		cursor: pointer
+		padding: 51px 0px
+
+#header-search-bar
+	height: 80px
+	padding: 10px 0
+	background: $dark_gray
+
+	+direction-context(right-to-left)  
+		form
+			+span-columns(6)
+
+			label
+				text-indent: -1000px
+				color: $dark_gray
+				height: auto 
+
+			.search-field
+				width: 411px
+				float: left
+				padding: 1rem 2rem 1rem 1rem
+
+			input[type="submit"]
+				float: left
+				padding: 1.23rem 0.5em
+				background: 
+					image: url('../images/search-icon.svg') 
+					repeat: no-repeat 
+					position: center
+					color: $light_gray
+				color: transparent
+				border: none
+
+
+#header.shrink-header
+	position: fixed
+	top: 0
+	width: 100%
+	z-index: 10000
+	transition: all 0.3s ease-in-out
+	height: $shrink_hdr_height
+
+	.logo
+		height: 70%
+		margin-top: 7px
+
+	.container
+		height: $shrink_hdr_height
+
+		.nav-wrap
+			height: 100%
+
+			a, i
+				+padding (20px null)
