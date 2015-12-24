@@ -35,13 +35,14 @@
 	float: left
 	display: block
 	margin-right: 2.35765%
-	max-width: 31.76157%;
+	max-width: 31.76157%
 
 .col-4 .col	
 	float: left
 	display: block
-	margin-right: 25.6406px
-	width: 252.75px
+	width: 23.2%
+	margin-right: 2.356%
+	max-width: 252.875px
 
 .col-10 .col
 	float: left
@@ -56,3 +57,33 @@
 
 .col-2
 	width: 40px
+
+@media screen and (max-width:997px)
+	.pod-wrap
+		margin: 0 auto
+
+		&::after
+			content: ""
+			display: block
+			clear: both
+
+		.col
+			margin-bottom: 15px
+
+	.col-4 .col	
+		float: left
+		display: block
+		width: 244px
+		margin-right: 3%
+
+@media screen and (min-width: 639px) and (max-width:997px)
+	.container 
+		max-width: 680px !important
+
+		.pod-wrap
+			max-width: 537px
+
+@media screen and (max-width:640px)  
+	.pod-wrap
+		max-width: 277px 
+

@@ -181,7 +181,6 @@ section
 
 #row1 
 	.pod-wrap
-		+span-columns(12)
 
 		.pod 
 			background: $dark_gray
@@ -235,8 +234,8 @@ section
 			font-size: 14px
 			font-weight: bold
 			margin: 70px 0 0 90px
-
-#row3
+// #row 2
+.highlights
 	background: $dark_gray url('../images/pattern.png') repeat center center
 
 	.h2-wrap
@@ -249,13 +248,11 @@ section
 			+margin(0 null 0 null)
 
 	.pod-wrap
-		+span-columns(12) 
 
 		.pod
 			position: relative 
 			overflow: hidden
 			height: 150px			
-			//+span-columns(4 of 12) 
 			+transition(all 0.3s ease-in-out)
 			
 			img 
@@ -281,8 +278,7 @@ section
 
 			&:hover:after
 				border-width: 1px
-				+size(320px 120px)
-
+				+size(87% 77%)
 
 			.front 
 				width: 115%
@@ -550,4 +546,140 @@ section
 	a:hover  
 		text-decoration: underline
 
-@import '02_modules/media-queries'  
+@media screen and (max-width:997px)  
+	nav#navbar  
+	    display: none 
+	    position: relative 
+	    z-index: 1 
+	 
+
+	#header .container  
+	    height: auto 
+	 
+
+	.nav-wrap  
+	    float: none !important 
+	    width: 100% 
+	    display: block 
+	 
+
+	ul.navigation  
+	    float: none !important 
+	    width: 100% 
+	    clear: left 
+	    height: auto !important 
+	 
+
+	.branding  
+		padding: 20px 0
+	 
+
+	nav#navbar .nav-wrap a  
+	    display: block 
+	    text-align: center 
+	    padding: 20px !important 
+	    height: auto 
+	 
+	 
+	nav#navbar .nav-wrap li  
+		height: auto !important 
+		display: block !important
+	 
+
+	ul.header-btns  
+	    float: none !important 
+	 
+
+	.header-btns i  
+	    padding: 17px !important 
+	    display: block 
+	    text-align: center 
+	 
+
+	div#mobile-menu  
+	    display: block !important 
+	    float: right 
+	    width: 30px 
+	    height: 21px 
+	    margin: 30px 0 0 
+	    background: transparent 
+	    position: relative 
+	    cursor: pointer 
+	    border-top: 4px solid white 
+	    z-index: 3 
+	 
+
+	div#mobile-menu::after,div#mobile-menu::before  
+	    display: block 
+	    content: '' 
+	    height: 4px 
+	    background: white 
+	    position: absolute 
+	    right: 0 
+	 
+
+	div#mobile-menu:before  
+	    width: 25px 
+	    top: 4px 
+	 
+
+	div#mobile-menu:after  
+	    top: 12px 
+	    width: 20px 
+	 
+
+
+	.pod-wrap  
+		padding-left: 15.5px 
+
+	.title-bg 
+		h2
+			&::before, &::after
+				display: none 
+
+	.highlights
+		.pod-wrap
+			max-width: 100% !important
+
+			.pod
+				height: 100px
+	
+
+
+ // 997px
+
+@media screen and (max-width:640px)  
+	#topbar  
+		display: none 
+	 
+	.pod-wrap
+		max-width: 277px 
+
+		.col
+			height: 200px !important
+			overflow: hidden
+
+			&:hover
+				img.front
+					transform: scale(1.2) !important
+
+			img.front
+				transform: scale(1) !important
+
+			a
+				height: 100%
+
+.testimonial
+	.image
+		display: none
+	.testimonials
+		display: block !important
+		text-align: center
+
+		.text 
+			font-size: 20px !important
+
+		.name
+			margin: 0 auto !important
+
+  //640px

@@ -62,7 +62,8 @@ gulp.task('sass', function() {
 	
 	// compile sass into css. Also add errors to console
 	.pipe(sass({
-		errLogToConsole: true
+		errLogToConsole: true,
+		outputStyle: 'compact' // :nested :compact :expanded :compressed
 	}))
 
 	.on('error', onError)
