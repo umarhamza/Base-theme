@@ -2,9 +2,8 @@
 @import 'normalize'
 @import '01_settings/variables'
 @import 'bourbon/bourbon'
-// Optionally call font awesome in 
-@import 'font-awesome/font-awesome'
-@import 'neat/neat' 
+// Optionally call font awesome in
+@import 'neat/neat'
 @import '01_settings/my-grid'
 @import '01_settings/mixins'
 @import '02_modules/header'
@@ -12,13 +11,13 @@
 
 .hide
 	display: none
- 
+
 .show
 	display: block !important
 
 .transition
 	transition: all 0.3s ease-in-out
- 
+
 .read-more
 	background-color: $red
 	color: white
@@ -42,11 +41,11 @@
 		background: white
 		color: $red
 
-.title-bg 
+.title-bg
 	h2::after, h2::before
 		display: inline-block
 		content: ""
-		background: 
+		background:
 			size: cover
 			repeat: no-repeat
 			position: center
@@ -85,7 +84,7 @@ ul
 	padding: 0
 	margin: 0
 
-h2 
+h2
 	font-size: 32px
 	font-weight: 400
 	color: $mid_gray
@@ -111,11 +110,11 @@ section
 
 	button
 		color: $light_gray
-		background: $dark_gray 
+		background: $dark_gray
 		font-size: 13px
 		height: inherit
 		padding: 15px
-		margin-left: 2px 
+		margin-left: 2px
 		float: left
 		height: 100%
 
@@ -123,7 +122,7 @@ section
 			background: $red
 			color: white
 
-		&:hover a 
+		&:hover a
 			color: white
 
 	+direction-context(left-to-right)
@@ -139,7 +138,7 @@ section
 	+direction-context(right-to-left)
 		.shop-btns
 			+span-columns(4)
-			width: auto 
+			width: auto
 			height: 100%
 
 // home hero
@@ -160,7 +159,7 @@ section
 			text-align: center
 			color: white
 
-			h2 
+			h2
 				font-size: $hero_font_size
 				font-weight: bold
 				color: white
@@ -179,17 +178,18 @@ section
 	padding: 50px 0
 	text-align: center
 
-#row1 
+#row1
 	.pod-wrap
 
-		.pod 
+		.pod
 			background: $dark_gray
-			position: relative 
+			position: relative
 			height: 356px
 
-			a 
+			a
 				display: block
-				position: relative 
+				position: relative
+				height: inherit
 
 			.front
 				transform: scale(0)
@@ -211,7 +211,7 @@ section
 		+align-items(center)
 		+justify-content(center)
 
-		.image 
+		.image
 			border-right: 1px solid #d4d4d4
 			padding-right: 30px
 			margin-right: 30px
@@ -219,18 +219,18 @@ section
 				+size(140px 140px)
 				border-radius: 50%
 
-		.text 
+		.text
 			color: $dark_gray
 			font-size: 27px
 			font-weight: 100
 			font-style: italic
-			
+
 			p
-				padding: 0 
+				padding: 0
 				margin: 0
 
 		.name
-			color: $red 
+			color: $red
 			font-size: 14px
 			font-weight: bold
 			margin: 70px 0 0 90px
@@ -250,47 +250,46 @@ section
 	.pod-wrap
 
 		.pod
-			position: relative 
+			position: relative
 			overflow: hidden
-			height: 150px			
+			height: 150px
 			+transition(all 0.3s ease-in-out)
-			
-			img 
+
+			img
 				width: auto
 
 			a
 				display: block
-			
+
 			&::after
 				border: 0px solid white
 				box-shadow: 0px 0px 0px 27px rgba(255,255,255,0.3)
 				content: ""
 				display: block
 				+size(100%)
-				margin: auto 
+				margin: auto
 				+position(absolute, 0 0 0 0)
 				+transition(all 0.3s ease-in-out)
 
-			&:hover .front 
-				width: 100%
-				height: auto
+			.front
 				+transition(all 0.3s ease-in-out)
-
-			&:hover:after
-				border-width: 1px
-				+size(87% 77%)
-
-			.front 
-				width: 115%
 				height: auto
 
 			.back
 				+position(absolute, 0 0 0 0)
 				margin: auto
 
-.products 
+			&:hover .front
+				transform: scale(1.2)
+				+transition(all 0.3s ease-in-out)
+
+			&:hover:after
+				border-width: 1px
+				+size(87% 77%)
+
+.products
 	.pod
-		position: relative 
+		position: relative
 		overflow: hidden
 
 		+transition(all 0.3s ease-in-out)
@@ -319,16 +318,16 @@ section
 				color: white
 				margin: 0
 
-			ul.stars 
+			ul.stars
 				padding: 0
 				margin-top: 4px
 
 				li
 					display: inline-block
 
-			p 
+			p
 				line-height: 18px
-				+margin(10px null 10px null) 
+				+margin(10px null 10px null)
 
 				&:after
 					content: ""
@@ -337,11 +336,11 @@ section
 					background: #aaa
 					margin-top: 10px
 
-			ul 
+			ul
 				padding: 0
 				margin: 0
 
-				li 
+				li
 					list-style: none
 
 					a
@@ -378,12 +377,12 @@ section
 			transform: translate(0px, 0px)
 			+transition(all 0.3s ease-in-out)
 			+transition-delay(0.1s)
-			
-			button 
+
+			button
 				padding: 0
 
 .carousel.best-seller
-	background-color: $lighter_gray 
+	background-color: $lighter_gray
 
 .blog-posts
 	.pod
@@ -421,9 +420,9 @@ section
 	&--details li
 		display: inline-block
 		margin-right: 15px
-		
+
 		i
-			margin-right: 6px		
+			margin-right: 6px
 
 .parallax
 	background:
@@ -445,9 +444,9 @@ section
 			display: block
 			+hide-text
 
-			background: 
-				image: 	url("../images/logo.svg") 
-				repeat: no-repeat 
+			background:
+				image: 	url("../images/logo.svg")
+				repeat: no-repeat
 				position: center
 				size: contain
 
@@ -490,22 +489,22 @@ section
 			h4, p
 				color: $red
 
-.breadcrumb-and-share	
+.breadcrumb-and-share
 	background: $red
 	padding: 15px 0
 
 	ul
-		padding: 0 
+		padding: 0
 		margin: 0
 
-		li 
+		li
 			display: inline-block
 
 			a
 				display: block
 
 				&:hover
-					background: $dark_red 
+					background: $dark_red
 
 	.breadcrumb
 		text-align: left
@@ -514,10 +513,10 @@ section
 			+size(auto 40px)
 			padding: 10px 15px 10px
 			background: $red2
-			display: block 
+			display: block
 			color: white
 
-	.social-icons 
+	.social-icons
 		text-align: right
 
 		a
@@ -535,7 +534,7 @@ section
 	text-align: left
 	color: $light_gray
 
-	h3 
+	h3
 		color: white
 		text-transform: uppercase
 		margin: 0 0 20px 0
@@ -543,99 +542,96 @@ section
 	p, li
 		font-size: 14px
 
-	a:hover  
+	a:hover
 		text-decoration: underline
 
-@media screen and (max-width:997px)  
-	nav#navbar  
-	    display: none 
-	    position: relative 
-	    z-index: 1 
-	 
+@media screen and (max-width:997px)
+	nav#navbar
+	    display: none
+	    position: relative
+	    z-index: 1
 
-	#header .container  
-	    height: auto 
-	 
 
-	.nav-wrap  
-	    float: none !important 
-	    width: 100% 
-	    display: block 
-	 
+	#header .container
+	    height: auto
 
-	ul.navigation  
-	    float: none !important 
-	    width: 100% 
-	    clear: left 
-	    height: auto !important 
-	 
 
-	.branding  
+	.nav-wrap
+	    float: none !important
+	    width: 100%
+	    display: block
+
+
+	ul.navigation
+	    float: none !important
+	    width: 100%
+	    clear: left
+	    height: auto !important
+
+
+	.branding
 		padding: 20px 0
-	 
 
-	nav#navbar .nav-wrap a  
-	    display: block 
-	    text-align: center 
-	    padding: 20px !important 
-	    height: auto 
-	 
-	 
-	nav#navbar .nav-wrap li  
-		height: auto !important 
+
+	nav#navbar .nav-wrap a
+	    display: block
+	    text-align: center
+	    padding: 20px !important
+	    height: auto
+
+
+	nav#navbar .nav-wrap li
+		height: auto !important
 		display: block !important
-	 
-
-	ul.header-btns  
-	    float: none !important 
-	 
-
-	.header-btns i  
-	    padding: 17px !important 
-	    display: block 
-	    text-align: center 
-	 
-
-	div#mobile-menu  
-	    display: block !important 
-	    float: right 
-	    width: 30px 
-	    height: 21px 
-	    margin: 30px 0 0 
-	    background: transparent 
-	    position: relative 
-	    cursor: pointer 
-	    border-top: 4px solid white 
-	    z-index: 3 
-	 
-
-	div#mobile-menu::after,div#mobile-menu::before  
-	    display: block 
-	    content: '' 
-	    height: 4px 
-	    background: white 
-	    position: absolute 
-	    right: 0 
-	 
-
-	div#mobile-menu:before  
-	    width: 25px 
-	    top: 4px 
-	 
-
-	div#mobile-menu:after  
-	    top: 12px 
-	    width: 20px 
-	 
 
 
-	.pod-wrap  
-		padding-left: 15.5px 
+	ul.header-btns
+	    float: none !important
 
-	.title-bg 
+
+	.header-btns i
+	    padding: 17px !important
+	    display: block
+	    text-align: center
+
+
+	div#mobile-menu
+	    display: block !important
+	    float: right
+	    width: 30px
+	    height: 21px
+	    margin: 30px 0 0
+	    background: transparent
+	    position: relative
+	    cursor: pointer
+	    border-top: 4px solid white
+	    z-index: 3
+
+
+	div#mobile-menu::after,div#mobile-menu::before
+	    display: block
+	    content: ''
+	    height: 4px
+	    background: white
+	    position: absolute
+	    right: 0
+
+	div#mobile-menu:before
+	    width: 25px
+	    top: 4px
+
+
+	div#mobile-menu:after
+	    top: 12px
+	    width: 20px
+
+	.pod-wrap
+		padding-left: 15.5px
+
+	.title-bg
 		h2
 			&::before, &::after
-				display: none 
+				display: none
 
 	.highlights
 		.pod-wrap
@@ -643,31 +639,25 @@ section
 
 			.pod
 				height: 100px
-	
 
+			.back
+				width: 70% !important
+
+			a
+				height: inherit
 
  // 997px
 
-@media screen and (max-width:640px)  
-	#topbar  
-		display: none 
-	 
-	.pod-wrap
-		max-width: 277px 
+@media screen and (max-width:640px)
+	#topbar
+		display: none
 
-		.col
-			height: 200px !important
-			overflow: hidden
+	.pod-wrap.col-4
+		max-width: 277px
 
-			&:hover
-				img.front
-					transform: scale(1.2) !important
-
-			img.front
-				transform: scale(1) !important
-
-			a
-				height: 100%
+	#row1 .col
+		height: 200px !important
+		overflow: hidden
 
 .testimonial
 	.image
@@ -676,7 +666,7 @@ section
 		display: block !important
 		text-align: center
 
-		.text 
+		.text
 			font-size: 20px !important
 
 		.name

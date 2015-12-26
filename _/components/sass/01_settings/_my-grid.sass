@@ -1,9 +1,9 @@
-//extended/helper classes 
-.clearfix   
-  &::after 
-    content: "" 
-    display: table 
-    clear: both 
+//extended/helper classes
+.clearfix
+  &::after
+    content: ""
+    display: table
+    clear: both
 
 // container
 .container
@@ -15,10 +15,10 @@
 
 
 // grid
-+media($tablet)	
++media($tablet)
 
 	.col-6 .col
-		+span-columns(2 of 12) 	
+		+span-columns(2 of 12)
 
 	.col-2 .col
 		+span-columns(6 of 12)
@@ -37,7 +37,7 @@
 	margin-right: 2.35765%
 	max-width: 31.76157%
 
-.col-4 .col	
+.col-4 .col
 	float: left
 	display: block
 	width: 23.2%
@@ -70,20 +70,19 @@
 		.col
 			margin-bottom: 15px
 
-	.col-4 .col	
+	.col-4 .col
 		float: left
 		display: block
 		width: 244px
 		margin-right: 3%
 
 @media screen and (min-width: 639px) and (max-width:997px)
-	.container 
+	.container
 		max-width: 680px !important
 
-		.pod-wrap
+		.pod-wrap.col-4
 			max-width: 537px
 
-@media screen and (max-width:640px)  
-	.pod-wrap
-		max-width: 277px 
-
+@media screen and (max-width:640px)
+	.pod-wrap.col-4
+		max-width: 277px
