@@ -1,10 +1,10 @@
 // imports
-@import 'normalize'
+@import '01_settings/normalize'
 @import '01_settings/variables'
 @import 'bourbon/bourbon'
 // Optionally call font awesome in
 @import 'neat/neat'
-@import '01_settings/my-grid'
+@import '03_layout/my-grid'
 @import '01_settings/mixins'
 @import '02_modules/header'
 @import '02_modules/carousel'
@@ -202,7 +202,7 @@ section
 			&:hover img.front
 				transform: scale(1)
 				+transition-delay(0.2s)
-
+// row2
 #row2
 	background: #ededed
 
@@ -659,17 +659,21 @@ section
 		height: 200px !important
 		overflow: hidden
 
-.testimonial
-	.image
+	.testimonial
+		.image
+			display: none
+		.testimonials
+			display: block !important
+			text-align: center
+
+			.text
+				font-size: 20px !important
+
+			.name
+				margin: 0 auto !important
+
+	#row4
 		display: none
-	.testimonials
-		display: block !important
-		text-align: center
 
-		.text
-			font-size: 20px !important
-
-		.name
-			margin: 0 auto !important
 
   //640px

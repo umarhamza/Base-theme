@@ -7,18 +7,18 @@
 
 	.container
 		height: $header_height
-	
-	.branding 
+
+	.branding
 		width: 100%
 		max-width: 180px
 		float: left
 
-	a 
+	a
 		display: block
 
 		.logo
 			+hide-text
-			background: 
+			background:
 				image: url("../images/logo.svg")
 				repeat: no-repeat
 				position: center
@@ -41,7 +41,7 @@
 			background: $mid_red
 
 		&:hover
-			background: $mid_red 
+			background: $mid_red
 
 	a
 		font-size: 16px
@@ -62,14 +62,14 @@
 	padding: 10px 0
 	background: $dark_gray
 
-	+direction-context(right-to-left)  
+	+direction-context(right-to-left)
 		form
 			+span-columns(6)
 
 			label
 				text-indent: -1000px
 				color: $dark_gray
-				height: auto 
+				height: auto
 
 			.search-field
 				width: 411px
@@ -79,9 +79,9 @@
 			input[type="submit"]
 				float: left
 				padding: 1.23rem 0.5em
-				background: 
-					image: url('../images/search-icon.svg') 
-					repeat: no-repeat 
+				background:
+					image: url('../images/search-icon.svg')
+					repeat: no-repeat
 					position: center
 					color: $light_gray
 				color: transparent
@@ -89,7 +89,6 @@
 
 
 #header.shrink-header
-	position: fixed
 	top: 0
 	width: 100%
 	z-index: 10000
@@ -108,3 +107,7 @@
 
 			a, i
 				+padding (20px null)
+
+@media screen and (min-width: 997px)
+	#header.shrink-header
+		position: fixed

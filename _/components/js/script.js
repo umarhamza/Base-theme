@@ -91,26 +91,25 @@ function transition( container, direction, width ) {
 
 // scroll func
 (function() {
-	"use strict"
+	//"use strict"
 
 	var header = document.querySelector('#header'),
-		shrinkOn = 600,
-		mq = window.matchMedia( "(min-width: 997px)" );
+		shrinkOn = 600;
+
+		// var mq = window.matchMedia( "(min-width: 997px)" );
+		// if (mq.matches) { } // JS Media query
 
 	window.addEventListener('scroll', function scrollFunc() {
 
-		if (mq.matches) {
+		var distanceY = window.pageYOffset || document.documentElement.scrollTop;
 
-			var distanceY = window.pageYOffset || document.documentElement.scrollTop;
+		if (distanceY > shrinkOn) {
+			header.className = 'shrink-header';
+			//window.removeEventListener(scroll, scrollFunc, false);
+		} else {
+			header.removeAttribute('class', 'shrink-header');
 
-			if (distanceY > shrinkOn) {
-				header.className = 'shrink-header';
-				//window.removeEventListener(scroll, scrollFunc, false);
-			} else {
-				header.removeAttribute('class', 'shrink-header');
+		};
 
-			};
-
-		} // if mq matches
 	}, false); // scroll evt listener
 })();
