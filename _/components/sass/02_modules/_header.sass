@@ -2,9 +2,6 @@
 	background: $red
 	position: static
 
-	*
-		height: 100%
-
 	.container
 		height: $header_height
 
@@ -12,9 +9,11 @@
 		width: 100%
 		max-width: 180px
 		float: left
+		height: 100%
 
 	a
 		display: block
+		height: inherit
 
 		.logo
 			+hide-text
@@ -24,8 +23,13 @@
 				position: center
 				size: contain
 			margin: 0
+			height: inherit
+
 
 #navbar
+	float: right
+	height: inherit
+
 	.nav-wrap
 		float: right
 
@@ -47,7 +51,7 @@
 		font-size: 16px
 		text-transform: uppercase
 		text-decoration: none
-		padding: 51px 30px
+		padding: 50px 30px
 		vertical-align: middle
 		display: table-cell
 
@@ -55,12 +59,24 @@
 		line-height: inherit
 		color: $dark_red
 		cursor: pointer
-		padding: 51px 0px
+		padding: 50px 0px
+
+.header-btns
+	li
+		&:hover
+			background: transparent !important
+			i
+				color: transparentize(black, .4) !important
+	.cart-wrap
+		display: none
 
 #header-search-bar
 	height: 80px
 	padding: 10px 0
 	background: $dark_gray
+
+	.container
+		height: inherit !important
 
 	+direction-context(right-to-left)
 		form
@@ -74,11 +90,13 @@
 			.search-field
 				width: 411px
 				float: left
-				padding: 1rem 2rem 1rem 1rem
+				padding: 16px 20px
+				height: auto !important
 
 			input[type="submit"]
 				float: left
-				padding: 1.23rem 0.5em
+				padding: 20px 15px 19px
+				height: auto !important
 				background:
 					image: url('../images/search-icon.svg')
 					repeat: no-repeat

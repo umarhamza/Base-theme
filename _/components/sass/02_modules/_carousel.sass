@@ -1,4 +1,20 @@
 .carousel
+
+	.grayed-out
+		position: absolute
+		top: 0
+		+size(30% 100%)
+		background: rgba(237, 237, 237, 0.7)
+		z-index: 100
+		cursor: pointer
+		display: none
+
+	.grayed-out.prev
+		left: 0
+
+	.grayed-out.next
+		right: 0
+
 	.pod-wrap
 		width: 100%
 		overflow-x: scroll
@@ -42,7 +58,3 @@
 .pod.grayed-out
 	opacity: .4
 	pointer-events: none
-
-.carousel .pod:last-child
-    border: 1px red solid
-    box-sizing: border-box
