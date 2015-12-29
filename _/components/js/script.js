@@ -57,16 +57,16 @@ console.log(index);
 
 // variables
 var headerSearchBar = document.getElementById('header-search-bar'),
-	searchButton = document.getElementById('search-btn'),
+	searchButton = document.getElementById('search-btn').parentNode,
 	mobileMenu = document.getElementById('mobile-menu'),
 	branding = document.querySelector('.branding'),
+	body = document.body,
 	navBar = document.getElementById('navbar'),
 	searchCloseBtn = document.getElementById('search-close-btn');
 
 searchButton.addEventListener('click', function() {
 	headerSearchBar.classList.toggle('show');
-	navBar.classList.toggle('clicked');
-	mobileMenu.classList.toggle('clicked');
+	body.classList.toggle('clicked');
 }, false);
 
 searchCloseBtn.addEventListener('click', function(e) {
@@ -75,8 +75,8 @@ searchCloseBtn.addEventListener('click', function(e) {
 }, false);
 
 mobileMenu.addEventListener('click', function(e) {
-	navBar.classList.toggle('clicked');
-	mobileMenu.classList.toggle('clicked');
+	body.classList.toggle('clicked');
+	//mobileMenu.classList.toggle('clicked');
 	branding.classList.toggle('clicked');
 }, false);
 
