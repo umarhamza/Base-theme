@@ -1,3 +1,55 @@
+// counters
+(function() {
+
+	//console.log( counters.getAttribute('data-counter') );
+
+	// for (var i = 0; i < counterTitles.length; i++) {
+	//
+	//  numbers = parseFloat( counterTitles[i].innerText.replace(/,/g, '') );
+	//
+	//  countUp(increment);
+	//
+	//  counterTitles[i].innerText = increment;
+	//
+	//  console.log(increment);
+	//
+	// } // for loop to loop over counterTitles
+
+
+	var counterTitles = document.querySelectorAll('.counters .pod h4'),
+			//counterTitles = document.querySelector('.counters .pod h4'),
+			numbers,
+			countUp,
+			increment = 0;
+
+//counterTitles.forEach(startTimer);
+
+// testing
+
+function startTimer(argument) {
+
+console.log(index);
+
+	numbers = parseFloat( counterTitles[index].innerText.replace(/,/g, '') );
+
+	timer = setInterval(function() {
+	  increment++;
+		//console.log(increment);
+
+		// multiply increment var
+		if ( increment === 500 ) {
+			increment = numbers;
+			clearInterval( timer );
+		}
+
+		// print out numbers
+		counterTitles.innerText = increment;
+
+	}, 0.05);
+} // startTimer func
+
+})(); // counters ife
+
 // search bar and mobile button
 (function() {
 
@@ -8,15 +60,23 @@ var headerSearchBar = document.getElementById('header-search-bar'),
 	searchButton = document.getElementById('search-btn'),
 	mobileMenu = document.getElementById('mobile-menu'),
 	branding = document.querySelector('.branding'),
-	navBar = document.getElementById('navbar');
+	navBar = document.getElementById('navbar'),
+	searchCloseBtn = document.getElementById('search-close-btn');
 
 searchButton.addEventListener('click', function() {
 	headerSearchBar.classList.toggle('show');
+	navBar.classList.toggle('clicked');
+	mobileMenu.classList.toggle('clicked');
+}, false);
+
+searchCloseBtn.addEventListener('click', function(e) {
+	headerSearchBar.classList.toggle('show');
+	e.preventDefault();
 }, false);
 
 mobileMenu.addEventListener('click', function(e) {
 	navBar.classList.toggle('clicked');
-	e.target.classList.toggle('clicked');
+	mobileMenu.classList.toggle('clicked');
 	branding.classList.toggle('clicked');
 }, false);
 
@@ -112,7 +172,7 @@ mobileMenu.addEventListener('click', function(e) {
 	"use strict"
 
 	var header = document.querySelector('#header'),
-		shrinkOn = 600;
+		shrinkOn = 200;
 
 	// JS Media Query
 	// mq = window.matchMedia( "(min-width: 997px)" );

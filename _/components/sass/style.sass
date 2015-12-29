@@ -2,6 +2,7 @@
 @import '01_settings/normalize'
 @import '01_settings/variables'
 @import 'bourbon/bourbon'
+
 // Optionally call font awesome in
 @import 'neat/neat'
 @import '03_layout/my-grid'
@@ -284,12 +285,12 @@ section
 			+position(absolute, 0 0 0 0)
 			margin: auto
 
-		&:hover .front
-			transform: scale(1.1)
+	.pod:hover .front, .col:hover > .pod .front
+		transform: scale(1.1)
 
-		&:hover:after
-			border-width: 1px
-			+size(87% 77%)
+	.pod:hover:after, .col:hover > .pod::after
+		border-width: 1px
+		+size(87% 77%)
 
 .products
 	.pod
@@ -446,6 +447,7 @@ section
 .counters
 	.pod
 		color: $mid_gray
+		margin: 30px auto
 
 		i
 			font-size: 25px
@@ -497,6 +499,7 @@ section
 
 	.breadcrumb
 		text-align: left
+		float: left
 
 		a
 			+size(auto 40px)
@@ -507,6 +510,7 @@ section
 
 	.social-icons
 		text-align: right
+		float: right
 
 		a
 			+size(40px)
@@ -624,5 +628,14 @@ section
 
 	.blog-posts .col
 		float: none
+		max-width: 100% !important
 
+	.hover-pull
+		.pod:hover:after, .col:hover > .pod::after
+			border-width: 1px
+			+size(90% 80%)
+
+	.counters
+		.pod
+			float: none
   //640px

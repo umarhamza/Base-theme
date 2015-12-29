@@ -22,8 +22,5 @@
     "gulp-sourcemaps": "^1.5.2",
     "gulp-uglify": "^1.4.0",
     "uglify": "^0.1.5"
-  },
-  "dependencies": {
-    "sass-breakpoints": "^1.0.0"
   }
 }
