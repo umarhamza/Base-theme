@@ -1,0 +1,85 @@
+body
+  position: relative
+  overflow-x: hidden
+
+#header .container
+    height: auto
+
+.branding
+  padding: 20px 0
+
+@media screen and (max-width: $mobile_breakpoint)
+  .branding.clicked
+    opacity: .05
+    pointer-events: none
+
+.logo
+  padding: 10px
+  margin: 10px 0 !important
+
+#navbar
+  +position(fixed, 0px -250px 0px null)
+  width: 250px
+  padding: 20px
+  z-index: 1
+  float: none !important
+  background: $dark_gray
+  box-shadow: 2px 0px 10px transparentize(black, .4)
+
+#navbar.clicked
+  right: 0
+
+.nav-wrap
+  float: none !important
+  +size(100%)
+  display: block
+
+  ul
+      float: none !important
+      width: 100%
+      height: auto !important
+      list-style: none
+
+  li
+    color: white
+    padding: 10px
+    background: darken($dark_gray, 1)
+    margin: 2px 0
+    text-transform: uppercase
+    text-align: center
+
+  a, i
+    +padding (20px null)
+
+#mobile-menu
+    display: block !important
+    float: right
+    width: 30px
+    height: 21px
+    margin: 50px 0 0
+    background: transparent
+    position: relative
+    right: 0
+    cursor: pointer
+    border-top: 4px solid white
+    z-index: 3
+
+#mobile-menu.clicked
+  right: 250px
+
+#mobile-menu::after,#mobile-menu::before
+    display: block
+    content: ''
+    height: 4px
+    background: white
+    position: absolute
+    right: 0
+
+div#mobile-menu:before
+    width: 25px
+    top: 4px
+
+
+div#mobile-menu:after
+    top: 12px
+    width: 20px

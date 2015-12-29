@@ -8,6 +8,7 @@
 @import '01_settings/mixins'
 @import '02_modules/header'
 @import '02_modules/carousel'
+@import '02_modules/slideout-nav'
 
 .hide
 	display: none
@@ -534,29 +535,6 @@ section
 		text-decoration: underline
 
 @media screen and (max-width:997px)
-	nav#navbar
-	    display: none
-	    position: relative
-	    z-index: 1
-
-
-	#header .container
-	    height: auto
-
-
-	.nav-wrap
-	    float: none !important
-	    width: 100%
-	    display: block
-
-
-	ul.navigation
-	    float: none !important
-	    width: 100%
-	    clear: left
-	    height: auto !important
-
-
 	.branding
 		padding: 20px 0
 
@@ -581,37 +559,6 @@ section
 	    padding: 17px !important
 	    display: block
 	    text-align: center
-
-
-	div#mobile-menu
-	    display: block !important
-	    float: right
-	    width: 30px
-	    height: 21px
-	    margin: 30px 0 0
-	    background: transparent
-	    position: relative
-	    cursor: pointer
-	    border-top: 4px solid white
-	    z-index: 3
-
-
-	div#mobile-menu::after,div#mobile-menu::before
-	    display: block
-	    content: ''
-	    height: 4px
-	    background: white
-	    position: absolute
-	    right: 0
-
-	div#mobile-menu:before
-	    width: 25px
-	    top: 4px
-
-
-	div#mobile-menu:after
-	    top: 12px
-	    width: 20px
 
 	.pod-wrap.col-4
 		padding-left: 15.5px

@@ -1,0 +1,41 @@
+#navbar
+	float: right
+	height: inherit
+
+	.nav-wrap
+		float: right
+
+	ul
+		float: left
+
+	li
+		display: inline-block
+		@extend .transition
+		+links($dark_red, $dark_red, white, white)
+
+		.home
+			background: $mid_red
+
+		&:hover
+			background: $mid_red
+
+	a
+		font-size: 16px
+		text-transform: uppercase
+		text-decoration: none
+		padding: 50px 30px
+		vertical-align: middle
+		display: table-cell
+
+	i
+		line-height: inherit
+		color: $dark_red
+		cursor: pointer
+		padding: 50px 0px
+
+.header-btns
+	li
+		&:hover
+			background: transparent !important
+			i
+				color: transparentize(black, .4) !important

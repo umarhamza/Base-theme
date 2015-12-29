@@ -26,49 +26,8 @@
 			height: inherit
 
 
-#navbar
-	float: right
-	height: inherit
-
-	.nav-wrap
-		float: right
-
-	ul
-		float: left
-
-	li
-		display: inline-block
-		@extend .transition
-		+links($dark_red, $dark_red, white, white)
-
-		.home
-			background: $mid_red
-
-		&:hover
-			background: $mid_red
-
-	a
-		font-size: 16px
-		text-transform: uppercase
-		text-decoration: none
-		padding: 50px 30px
-		vertical-align: middle
-		display: table-cell
-
-	i
-		line-height: inherit
-		color: $dark_red
-		cursor: pointer
-		padding: 50px 0px
-
-.header-btns
-	li
-		&:hover
-			background: transparent !important
-			i
-				color: transparentize(black, .4) !important
-	.cart-wrap
-		display: none
+.cart-wrap
+	display: none
 
 #header-search-bar
 	height: 80px
@@ -113,18 +72,17 @@
 	transition: all 0.3s ease-in-out
 	height: $shrink_hdr_height
 
-	.logo
-		height: 70%
-		margin-top: 7px
+	.branding
+		padding: 10px
+
+		.logo
+			padding: 0 !important
+			margin: 0 !important
+	#mobile-menu
+		margin-top: 20px !important
 
 	.container
 		height: $shrink_hdr_height
-
-		.nav-wrap
-			height: 100%
-
-			a, i
-				+padding (20px null)
 
 @media screen and (min-width: 997px)
 	#header.shrink-header

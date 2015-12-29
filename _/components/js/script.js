@@ -7,14 +7,17 @@
 var headerSearchBar = document.getElementById('header-search-bar'),
 	searchButton = document.getElementById('search-btn'),
 	mobileMenu = document.getElementById('mobile-menu'),
+	branding = document.querySelector('.branding'),
 	navBar = document.getElementById('navbar');
 
 searchButton.addEventListener('click', function() {
 	headerSearchBar.classList.toggle('show');
 }, false);
 
-mobileMenu.addEventListener('click', function() {
-	navBar.classList.toggle('show');
+mobileMenu.addEventListener('click', function(e) {
+	navBar.classList.toggle('clicked');
+	e.target.classList.toggle('clicked');
+	branding.classList.toggle('clicked');
 }, false);
 
 })(); // search bar and mobile button ife
