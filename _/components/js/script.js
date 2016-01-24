@@ -179,7 +179,7 @@ mobileMenu.addEventListener('click', function(e) {
 	// if (mq.matches) {} // JS Media Query
 
 	window.addEventListener('scroll', function scrollFunc() {
-
+console.log(distanceY);
 			var distanceY = window.pageYOffset || document.documentElement.scrollTop;
 
 			if (distanceY > shrinkOn) {
